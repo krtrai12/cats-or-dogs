@@ -14,8 +14,8 @@
                 <input type='text' name='username' placeholder='username'>
                 <input type='text' name='password' placeholder='password'>
                 <ul>
-                    <li><a href='main.html'></a>SIGN IN</li>
-                    <li><a href='login.html'></a>Back</li>
+                    <li><a href='main.php'></a>SIGN IN</li>
+                    <li><a href='login.php'></a>Back</li>
                 </ul>
             </fieldset>
         </div>
