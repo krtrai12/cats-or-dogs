@@ -1,0 +1,45 @@
+use cs332;
+
+drop table if exists comments;
+drop table if exists posts;
+drop table if exists users;
+drop table if exists animals;
+
+create table users (
+    username VARCHAR(20) PRIMARY KEY,
+    gender CHAR(1) NOT NULL,
+    first VARCHAR(20) NOT NULL,
+    last VARCHAR(20) NOT NULL,
+    animal_choice VARCHAR(10)
+);
+
+create table posts (
+    post_id INT AUTO_INCREMENT PRIMARY KEY,
+    posted_by VARCHAR(20),
+    pic_id VARCHAR(50) NOT NULL,
+    caption VARCHAR(255),
+    timestamp TIMESTAMP NOT NULL,
+    reported TINYINT(1) NOT NULL
+);
+
+create table comments (
+    comment_id INT AUTO_INCREMENT PRIMARY KEY,
+    comment_by VARCHAR(20) NOT NULL,
+    timestamp TIMESTAMP NOT NULL,
+    content VARCHAR(255),
+    comment_on INT,
+    reported TINYINT(1) NOT NULL
+);
+
+create table animals (
+    animal VARCHAR(10) PRIMARY KEY
+);
+
+alter table comments add FOREIGN KEY(comment_by) references users(username);
+alter table posts add FOREIGN KEY(posted_by) references users(username);
+alter table comments add FOREIGN KEY(comment_on) references posts(post_id);
+alter table users add FOREIGN KEY(animal_choice) references animals(animal);
+
+insert into animals(animal) values ("cat");
+insert into animals(animal) values ("dog");
+insert into animals(animal) values ("both");
