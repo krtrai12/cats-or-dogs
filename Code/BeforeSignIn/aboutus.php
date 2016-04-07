@@ -3,9 +3,9 @@
 <html>
     <head>
         <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>catsordogs</title>
-    <link rel="stylesheet" href="veiws/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>About Us</title>
+        <link rel="stylesheet" href="veiws/style.css">
     </head>
     
     <body>
