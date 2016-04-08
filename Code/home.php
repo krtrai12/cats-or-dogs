@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Catsordogs Home</title>
-        <link rel="stylesheet" href="cats-or-dogs/Code/style.css">
-    </head>
+<?php require('header.php'); ?>
     
     <body>
         <header>
@@ -45,4 +37,4 @@
             <script src="slideshow.js"></script>
         </section>
         
-        <?php require('veiws/footerSignedOut.php'); ?>
+        <?php require('footerSignedOut.php'); ?>
