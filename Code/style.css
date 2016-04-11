@@ -1,0 +1,19 @@
+
+* {
+    margin: 0;   
+}
+
+body {
+    margin: auto;
+    background: #10203A;
+    color: #ffffff;
+    font-family: "Helvetica Neue Ultralight", Helvetica;
+}
+
+section {
+    background: #A4C6CF;
+}
+
+footer {
+    background: D9D9DB;
+}
