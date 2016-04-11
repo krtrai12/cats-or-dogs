@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Sign In</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+<?php require('header.php'); ?>
     <body>
         <header>
             <h1>SIGN IN</h1>
@@ -19,5 +13,4 @@
                 </ul>
             </fieldset>
         </div>
-    </body>
-</html>
+        <?php require('footerSignedOut.php'); ?>
