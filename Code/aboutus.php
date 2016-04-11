@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>About Us</title>
-        <link rel="stylesheet" href="veiws/style.css">
-    </head>
+<?php require('header.php'); ?>
     
     <body>
         <header>
@@ -18,6 +10,6 @@
         <p>Catsordogs.html is the perfect place for all of you pet lovers out there who just cant stop posting pictures of those adorable little bundles of fur. Because lets be honest, your Facebook friends probably love your pets, but after a certain point they will all start to get annoyed once you post the tenth picture of your cat in that adorable little hat. But not Here! This is exactly why we decided to create catsordogs.html! Here we love all your pet pictures no matter how many you share!</p>
         <p>So join us today and add to the adorableness!</p>
         
-        <?php require('veiws/footerSignedOut.php'); ?>
+        <?php require('footerSignedOut.php'); ?>
     </body>
 </html>

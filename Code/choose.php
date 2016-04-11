@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Sign In</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+    <?php require('header.php'); ?>
     <body>
         <header>
             <h1>IT TIME FOR YOU TO<br>CHOOSE!</h1>
@@ -18,5 +12,4 @@
                 </figure>
             </section>
         </div>
-    </body>
-</html>
+        <?php require('footerSignedOut.php'); ?>
