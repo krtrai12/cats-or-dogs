@@ -1,6 +1,6 @@
 <div class="col-sm-6">
                     <h3>Register</h3>
-                    <form action="authenticate.php" method="post" class="well">
+                    <form action="views/authenticate.php" method="post" class="well">
                         <div class="form-group">
                             <label>Username</label>
                             <input type="text" name="username" class="form-control">
