@@ -1,19 +1,23 @@
+<div class="col-sm-6">
+                    <h3>Register</h3>
+                    <form action="authenticate.php" method="post" class="well">
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input type="text" name="username" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" name="password" class="form-control">
+                        </div>
+                        <input type="hidden" name="task" value="register">
+                        <button type="submit" class="btn btn-default">Register</button>
+                    </form>
+                </div>
+<?php if (isset($_SESSION['message'])): ?>
+                <div class="row">
+                    <p class="text-info text-center"><?php echo $_SESSION['message']; unset($_SESSION['message']);?></p>
+                </div>
+<?php endif; ?>
+            </div>
 
-    <body>
-        <header>
-            <h1>SIGN UP</h1>
-        </header>
-        <div id='container'>
-            <fieldset>
-                <input type='text' name='username' placeholder='username'>
-                <input type='text' name='password' placeholder='password'>
-                <input type='text' name='confirm' placeholder='confirm password'>
-                <ul>
-                    <li><a href='choose.php'></a>SIGN UP</li>
-                </ul>
-                <p>Already have an<br>account?</p>
-                <ul>
-                    <li><a href='signin.php'></a>LOG IN HERE</li>
-                </ul>
-            </fieldset>
-        </div>
+
