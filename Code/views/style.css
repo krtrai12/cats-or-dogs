@@ -5,15 +5,41 @@
 
 body {
     margin: auto;
-    background: #10203A;
+    background: #2b2c2d;
     color: #ffffff;
     font-family: "Helvetica Neue Ultralight", Helvetica;
 }
 
 section {
-    background: #A4C6CF;
+    background: #18a190;
+    float: left;
 }
 
-footer {
-    background: D9D9DB;
+section bothButton {
+    background: #167692;
 }
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #7c8385;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+li a:hover {
+    background-color: #167692;
+}
+
