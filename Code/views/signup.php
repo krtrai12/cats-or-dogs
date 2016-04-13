@@ -1,4 +1,4 @@
-<?php require('header.php'); ?>
+
     <body>
         <header>
             <h1>SIGN UP</h1>
@@ -17,4 +17,3 @@
                 </ul>
             </fieldset>
         </div>
-        <?php require('footerSignedOut.php'); ?>
