@@ -1,3 +1,4 @@
-<?php require('header.php'); ?>
 
-<h1>YOU LOGGED IT</h1>
+    <body>
+        <h1>YOU LOGGED IT</h1>
+    </body>
