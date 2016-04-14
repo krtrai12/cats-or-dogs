@@ -37,4 +37,3 @@
             <script src="slideshow.js"></script>
         </section>
         
-        <?php require('footerSignedOut.php'); ?>
