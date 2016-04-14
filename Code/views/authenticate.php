@@ -6,7 +6,7 @@ session_start();
 if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['task'])) {
 
     // Connect to database
-    require_once('models/database.php');
+    require_once('/var/www/html/Code/models/database.php');
     $db = databaseConnection();
     
     if (!isset($db)) {
