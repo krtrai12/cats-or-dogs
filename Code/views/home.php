@@ -6,34 +6,34 @@
         </header>
         
         <section id="catButton">
-            <img class="slides" src="./Images/CatImages/greyCat.jpg">
-            <img class="slides" src="./Images/CatImages/orangeCatOnBack.jpg">
-            <img class="slides" src="./Images/CatImages/moreKittens.jpg">
-            <img class="slides" src="./Images/CatImages/bowTieKitten.jpg">
-            <img class="slides" src="./Images/CatImages/whatsThatCat.jpg">
+            <img class="slides" href="./Images/CatImages/greyCat.jpg">
+            <img class="slides" href="./Images/CatImages/orangeCatOnBack.jpg">
+            <img class="slides" href="./Images/CatImages/moreKittens.jpg">
+            <img class="slides" href="./Images/CatImages/bowTieKitten.jpg">
+            <img class="slides" href="./Images/CatImages/whatsThatCat.jpg">
             <script src="slideshow.js"></script>
         </section>
         
         <section id="bothButton">
-            <img class="slides" src="./Images/DogImages/wrinklyPuppy.jpg">
-            <img class="slides" src="./Images/CatImages/greyCat.jpg">
-            <img class="slides" src="./Images/DogImages/wetHound.jpg">
-            <img class="slides" src="./Images/CatImages/orangeCatOnBack.jpg">
-            <img class="slides" src="./Images/DogImages/radBeatsDawg.jpg">
-            <img class="slides" src="./Images/CatImages/moreKittens.jpg">
-            <img class="slides" src="./Images/DogImages/pickMePupp.jpg">
-            <img class="slides" src="./Images/CatImages/bowTieKitten.jpg">
-            <img class="slides" src="./Images/DogImages/iGotABallPup.jpg">
-            <img class="slides" src="./Images/CatImages/whatsThatCat.jpg">
+            <img class="slides" href="./Images/DogImages/wrinklyPuppy.jpg">
+            <img class="slides" href="./Images/CatImages/greyCat.jpg">
+            <img class="slides" href="./Images/DogImages/wetHound.jpg">
+            <img class="slides" href="./Images/CatImages/orangeCatOnBack.jpg">
+            <img class="slides" href="./Images/DogImages/radBeatsDawg.jpg">
+            <img class="slides" href="./Images/CatImages/moreKittens.jpg">
+            <img class="slides" href="./Images/DogImages/pickMePupp.jpg">
+            <img class="slides" href="./Images/CatImages/bowTieKitten.jpg">
+            <img class="slides" href="./Images/DogImages/iGotABallPup.jpg">
+            <img class="slides" href="./Images/CatImages/whatsThatCat.jpg">
             <script src="slideshow.js"></script>
         </section>
         
         <section id="dogButton">
-            <img class="slides" src="./Images/DogImages/iGotABallPup.jpg">
-            <img class="slides" src="./Images/DogImages/pickMePupp.jpg">
-            <img class="slides" src="./Images/DogImages/radBeatsDawg.jpg">
-            <img class="slides" src="./Images/DogImages/wetHound.jpg">
-            <img class="slides" src="./Images/DogImages/wrinklyPuppy.jpg">
+            <img class="slides" href="./Images/DogImages/iGotABallPup.jpg">
+            <img class="slides" href="./Images/DogImages/pickMePupp.jpg">
+            <img class="slides" href="./Images/DogImages/radBeatsDawg.jpg">
+            <img class="slides" href="./Images/DogImages/wetHound.jpg">
+            <img class="slides" href="./Images/DogImages/wrinklyPuppy.jpg">
             <script src="slideshow.js"></script>
         </section>
         
