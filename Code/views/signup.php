@@ -6,6 +6,18 @@
                             <input type="text" name="username" class="form-control">
                         </div>
                         <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" name="firstname" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" name="lastname" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <input type="text" name="gender" class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label>Password</label>
                             <input type="password" name="password" class="form-control">
                         </div>
