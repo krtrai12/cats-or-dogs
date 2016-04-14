@@ -4,14 +4,9 @@
 function databaseConnection() {
     
     // Connection parameters
-    //require_once('../mysql.php');
+    require_once('../mysql.php');
     
-        // Connection parameters
-    $host = 'localhost';
-    $dbname = 'cs332';
-    $user = 'web';
-    $password = 'kaylat';
-    
+
     // Attempt connection
     try {
         $db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $password);
