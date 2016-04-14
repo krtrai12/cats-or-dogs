@@ -1,5 +1,5 @@
 <?php require('header.php'); ?>
-    
+
     <body>
         <header>
             <h1>ABOUT US</h1>
@@ -11,5 +11,3 @@
         <p>So join us today and add to the adorableness!</p>
         
         <?php require('footerSignedOut.php'); ?>
-    </body>
-</html>
