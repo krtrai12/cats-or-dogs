@@ -10,6 +10,10 @@ body {
     font-family: "Helvetica Neue Ultralight", Helvetica;
 }
 
+header h1 {
+    margin: auto;
+}
+
 section {
     background: #18a190;
     float: left;
@@ -37,9 +41,14 @@ li a {
     color: white;
     text-align: center;
     padding: 14px 16px;
+    text-decoration: none;
 }
 
 li a:hover {
-    background-color: #167692;
+    background-color: #18a190;
+}
+
+li .active {
+    background-color: #167692
 }
 
