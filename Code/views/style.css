@@ -17,6 +17,7 @@ header h1 {
 #catButton, #bothButton, #dogButton {
     background: #18a190;
     min-width: 30%;
+    max-height: 30%;
     height: 30%;
     float: left;
 }
@@ -25,10 +26,10 @@ header h1 {
     background: #167692;
 }
 
-.slides {
+section .slides {
     margin: auto;
-    width: 80%;
-    height: 80%;
+    max-width: 80%;
+    height: auto;
 }
 
 
