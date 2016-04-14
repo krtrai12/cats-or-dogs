@@ -14,6 +14,12 @@
             <p>Animal Choice</p>
         </section>
         <section id="posts">
-            <div></div>
+            <fieldset>
+                <label>Post about your pet:</label><br>
+                <div>
+                    <input type="text" name="newpost" placeholder="Description...">
+                </div>
+                <button type="submit" name="add" value="Submit">Submit</button>
+            </fieldset>
         </section>
     </body>
