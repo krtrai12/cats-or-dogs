@@ -16,7 +16,7 @@ create table users (
 create table posts (
     post_id INT AUTO_INCREMENT PRIMARY KEY,
     posted_by VARCHAR(20),
-    pic_id VARCHAR(50) NOT NULL,
+    pic_id VARCHAR(50),
     caption VARCHAR(255),
     timestamp TIMESTAMP NOT NULL,
     reported TINYINT(1) NOT NULL

@@ -13,4 +13,12 @@
         <section id="friendsfeed">
             <div></div>
         </section>
+        <section id="suggestions">
+            <div>
+                <p>Suggested Followers:</p>
+                <ul>
+                    <p>Jokes, You Have No Friends.</p>
+                </ul>
+            </div>
+        </section>
     </body>
