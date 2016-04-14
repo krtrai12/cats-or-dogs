@@ -17,7 +17,7 @@ header h1 {
 #catButton, #bothButton, #dogButton {
     background: #18a190;
     min-width: 30%;
-    max-height: 30%;
+    height: 30%;
     height: 30%;
     float: left;
 }

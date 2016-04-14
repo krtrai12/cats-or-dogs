@@ -6,7 +6,7 @@ function slideshow() {
     var x= document.getElementsByClassName("slides");
     
     for (i= 0; i < x.length; i++) {
-        x[i].style.display = "none";  
+        x[i].style.display = "block";  
     }
     index++;
     
