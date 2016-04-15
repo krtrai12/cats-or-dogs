@@ -1,5 +1,3 @@
-<?php require('header.php'); ?>
-    
     <body>
         <header>
             <h1>CATS? or DOGS?</h1>
