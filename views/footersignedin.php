@@ -1,4 +1,4 @@
-        <footer id="footerMenuSignedOut">
+        <footer id="footerMenuSignedIn">
             <nav>
                 <ul>
                     <li <?php if ($_SERVER['REQUEST_URI'] == '../about.php') echo 'class="active"'; ?>><a href="../about.php">ABOUT US</a></li>
