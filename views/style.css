@@ -17,8 +17,11 @@ header h1 {
 
 #catButton, #bothButton, #dogButton {
     background: #18a190;
-    min-width: 30%;
-    height: 600px;
+    margin: 2.5%;
+    padding: 1%;
+    width: 25%;
+    min-height: 200px;
+    border-radius: 10px;
     float: left;
 }
 

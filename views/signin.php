@@ -1,6 +1,6 @@
 <div class="row">
                 <div class="col-sm-6">
-                    <h3>Login</h3>
+                    <h1>Login</h1>
                     <form action="views/authenticate.php" method="post" class="well">
                         <div class="form-group">
                             <label>Username</label>
