@@ -2,6 +2,7 @@
 
 session_start();
 
-// Show the home page only if logged in
+// Show the about us page
 require('views/header.php');
 require('views/aboutus.php');
+require('views/footerSignedOut.php');
