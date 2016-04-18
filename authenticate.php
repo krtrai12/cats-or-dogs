@@ -44,5 +44,5 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['task
 }
 
 // Return home
-header('Location: ./');         // ./ refers to index.php
+header('Location: ./signupController.php');         // ./ refers to index.php
 exit();
