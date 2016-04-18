@@ -3,7 +3,7 @@
 session_start();
 
 // Should have form inputs
-if (isset($_POST['username']) && isset($_POST['password'])) { // add rest of params
+if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['gender']) && isset($_POST['first']) && isset($_POST['last'])) { 
 
     // Connect to database
     require_once('/var/www/html/models/database.php');
@@ -21,14 +21,14 @@ if (isset($_POST['username']) && isset($_POST['password'])) { // add rest of par
             
         if ($success) {
             $_SESSION['message'] = 'Registered! You can now log in.';
-            header('signinContoller.php');
+            header('Location: signinController.php');
             exit();
         } else {
             $_SESSION['message'] = 'Sorry, that username is unavailable.';
-            header('signupContoller.php');
+            header('Location: signupController.php');
             exit();
         }
         
     }
-    echo $_SESSION['message'];
 }
+
