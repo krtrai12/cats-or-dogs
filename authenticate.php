@@ -20,9 +20,13 @@ if (isset($_POST['username']) && isset($_POST['password'])) { // add rest of par
         $success = $user->register($_POST['username'], $_POST['gender'], $_POST['first'], $_POST['last'], $_POST['password']);
             
         if ($success) {
-            $_SESSION['message'] = 'Registered! You can now log in.'; // go to log in controller
+            $_SESSION['message'] = 'Registered! You can now log in.';
+            header('signinContoller.php');
+            exit();
         } else {
-            $_SESSION['message'] = 'Sorry, that username is unavailable.'; // redirect to same page
+            $_SESSION['message'] = 'Sorry, that username is unavailable.';
+            header('signupContoller.php');
+            exit();
         }
         
     }
