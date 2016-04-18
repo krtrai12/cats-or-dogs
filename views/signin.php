@@ -1,7 +1,7 @@
 <div class="row">
                 <div class="col-sm-6">
                     <h1>Login</h1>
-                    <form action="views/authenticate.php" method="post" class="well">
+                    <form action="../authenticate.php" method="post" class="well">
                         <div class="form-group">
                             <label>Username</label>
                             <input type="text" name="username" class="form-control">
