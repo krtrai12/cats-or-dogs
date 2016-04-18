@@ -11,8 +11,14 @@ body {
     font-family: "Helvetica Neue Ultralight", Helvetica;
 }
 
-header h1 {
+h1, p {
     margin: auto;
+    margin-bottom: 25px;
+    text-align: center;
+}
+div {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #catButton, #bothButton, #dogButton {
@@ -66,7 +72,7 @@ li a:hover {
 
 #footerMenuSignedOut {
     position:fixed;
-   bottom:0;
-   width:100%;
+    bottom:0;
+    width:100%;
 }
 
