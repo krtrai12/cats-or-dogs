@@ -3,7 +3,7 @@
 session_start();
 
 // Should have form inputs
-if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['task'])) {
+if (isset($_POST['username']) && isset($_POST['password'])) { // add rest of params
 
     // Connect to database
     require_once('/var/www/html/models/database.php');
@@ -15,34 +15,16 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['task
         
         // Create user model
         require_once('models/user.php');
-        $user = new User($db, $_POST['username'], $_POST['password']);
+        $user = new User($db);
         
-        // Attempt registration
-        if ($_POST['task'] == 'register') {
-            $success = $user->register();
+        $success = $user->register($_POST['username'], $_POST['gender'], $_POST['first'], $_POST['last'], $_POST['password']);
             
-            if ($success) {
-                $_SESSION['message'] = 'Registered! You can now log in.';
-            } else {
-                $_SESSION['message'] = 'Sorry, that username is unavailable.';
-            }
+        if ($success) {
+            $_SESSION['message'] = 'Registered! You can now log in.'; // go to log in controller
+        } else {
+            $_SESSION['message'] = 'Sorry, that username is unavailable.'; // redirect to same page
         }
         
-        // Or attempt login
-        elseif ($_POST['task'] == 'login') {
-            $user_id = $user->login();
-            
-            // whenever you have a successful login, it's a good idea to start a new session
-            if (isset($user_id)) {
-                session_regenerate_id(true); // New session for login
-                $_SESSION['user_id'] = $user_id;
-            } else {
-                $_SESSION['message'] = 'Wrong username or password.';
-            }
-        }
     }
+    echo $_SESSION['message'];
 }
-
-// Return home
-header('Location: ./signupController.php');         // ./ refers to index.php
-exit();
