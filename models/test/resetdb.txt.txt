@@ -10,7 +10,7 @@ create table users (
     gender CHAR(1) NOT NULL,
     first VARCHAR(20) NOT NULL,
     last VARCHAR(20) NOT NULL,
-    password VARCHAR(20) NOT NULL,
+    password VARCHAR(255) NOT NULL,
     animal_choice VARCHAR(10)
 );
 
