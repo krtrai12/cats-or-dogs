@@ -10,13 +10,16 @@
                             <label>Password</label>
                             <input type="password" name="signinpassword" class="form-control">
                         </div>
+                        <div>
                         <input type="hidden" name="task" value="login">
                         <button type="submit" class="btn btn-default">Login</button>
+                        </div>
                     </form>
-<?php if (isset($_SESSION['message'])): ?>
-                <div class="row">
-                    <p class="text-info text-center"><?php echo $_SESSION['message']; unset($_SESSION['message']);?></p>
                 </div>
-<?php endif; ?>
-            </div>
+                <?php if (isset($_SESSION['message'])): ?>
+                                <div class="row">
+                                                <p class="text-info text-center"><?php echo $_SESSION['message']; unset($_SESSION['message']);?></p>
+                                </div>
+                <?php endif; ?>
+</div>
 

@@ -2,21 +2,26 @@
                     <h1>Register</h1>
                     <form action="../authenticate.php" method="post" class="well">
                         <div class="form-group">
-                            <input type="text" name="username" class="form-control" placeholder="Username">
+                                        <label>Username</label>
+                                        <input type="text" name="username" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="first" class="form-control" placeholder="First Name">
+                                        <label>First Name</label>
+                                        <input type="text" name="first" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="last" class="form-control" placeholder="Last Name">
+                                        <label>Last Name</label>
+                                        <input type="text" name="last" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="gender" class="form-control" placeholder="Gender">
+                                        <label>Gender</label>
+                                        <input type="text" name="gender" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="password" name="password" class="form-control" placeholder="Password">
+                                        <label>Password</label>
+                                        <input type="password" name="password" class="form-control">
                         </div>
-                        <button type="submit" class="btn btn-default">Register</button>
+                        <div><button type="submit" class="btn btn-default">Register</button></div>   
                     </form>
                 </div>
 <?php if (isset($_SESSION['message'])): ?>
