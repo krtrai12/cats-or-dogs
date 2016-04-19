@@ -29,7 +29,7 @@ class User {
         
         $row = $select->fetch(PDO::FETCH_ASSOC);
         if (isset($row) && password_verify($password, $row['password'])) {
-            return $row['user_id'];
+            return $row['username'];
         } else {
             return NULL;
         }

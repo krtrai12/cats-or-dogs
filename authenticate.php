@@ -50,7 +50,7 @@ if (isset($_POST['signinusername']) && isset($_POST['signinpassword'])) {
             
         if ($success) {
             session_regenerate_id(true); // New session for login
-            $_SESSION['user_id'] = $user_id;
+            $_SESSION['user_id'] = $_POST['signinusername'];
             header('Location: ./');
             exit();
         } else {
