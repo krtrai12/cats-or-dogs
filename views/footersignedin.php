@@ -1,4 +1,5 @@
         <footer id="footerMenuSignedIn">
+            <?php require_once('searchDB.php')?>
             <nav>
 <<<<<<< HEAD
                 <ul>
@@ -22,4 +23,7 @@
             </nav>
         </footer>
     </body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../views/searchForFriends.js"></script>
 </html>
