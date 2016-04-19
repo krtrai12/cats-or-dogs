@@ -32,3 +32,34 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['gend
     }
 }
 
+if (isset($_POST['signinusername']) && isset($_POST['signinpassword'])) {
+    
+    // Connect to database
+    require_once('/var/www/html/models/database.php');
+    $db = databaseConnection();
+    
+    if (!isset($db)) {
+        $_SESSION['message'] = "Could not connect to the database.";
+    } else {
+        
+        // Create user model
+        require_once('models/user.php');
+        $user = new User($db);
+        
+        $success = $user->login($_POST['signinusername'], $_POST['signinpassword']);
+            
+        if ($success) {
+            session_regenerate_id(true); // New session for login
+            $_SESSION['user_id'] = $user_id;
+            header('Location: ./');
+            exit();
+        } else {
+            $_SESSION['message'] = 'Invalid Account Credentials.';
+            header('Location: signinController.php');
+            exit();
+        }
+        
+    }
+    
+}
+

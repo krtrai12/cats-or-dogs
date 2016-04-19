@@ -4,11 +4,11 @@
                     <form action="../authenticate.php" method="post" class="well">
                         <div class="form-group">
                             <label>Username</label>
-                            <input type="text" name="username" class="form-control">
+                            <input type="text" name="signinusername" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" name="password" class="form-control">
+                            <input type="password" name="signinpassword" class="form-control">
                         </div>
                         <input type="hidden" name="task" value="login">
                         <button type="submit" class="btn btn-default">Login</button>
