@@ -63,3 +63,7 @@ if (isset($_POST['signinusername']) && isset($_POST['signinpassword'])) {
     
 }
 
+if (isset($_POST['logout'])) {
+    $_SESSION['user_id'] = NULL;
+}
+

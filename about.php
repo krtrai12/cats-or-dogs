@@ -4,5 +4,10 @@ session_start();
 
 // Show the about us page
 require('views/header.php');
-require('views/aboutus.php');
-require('views/footerSignedOut.php');
+if (isset($_SESSION['user_id'])) {
+    require('views/aboutus.php');
+    require('views/footerSignedIn.php');
+} else {
+    require('views/aboutus.php');
+    require('views/footerSignedOut.php');
+}
