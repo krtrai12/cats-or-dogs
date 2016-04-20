@@ -7,7 +7,7 @@ session_start();
 require('views/header.php');
 if (isset($_SESSION['user_id'])) {
     require('views/main.php');
-    require('views/footerSignedIn.php');
+    require('views/footersignedin.php');
 } else {
     require('views/home.php');
     require('views/footerSignedOut.php');
