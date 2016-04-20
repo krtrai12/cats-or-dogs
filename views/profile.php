@@ -12,7 +12,8 @@
             <ul>
                 <li><a href="edit.php">Edit Profile</a></li>
             </ul>
-            <h6>Username/Name</h6>
+            <p>Username</p>
+            <p>First/Last</p>
             <p>Gender</p>
             <p>Animal Choice</p>
         </section>

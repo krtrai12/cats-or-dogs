@@ -34,4 +34,11 @@ class User {
             return NULL;
         }
     }
+    
+    // Getting the Details for the users profile page
+    function getUserDetails($username) {
+        $select = $this->db->prepare('select * from users where username=:username');
+        $select->bindParam(':username', $username, PDO::PARAM_STR);
+        return $select->execute();
+    }
 }
