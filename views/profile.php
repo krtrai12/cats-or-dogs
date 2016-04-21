@@ -5,17 +5,22 @@
                 <img src="https://www.junkfreejune.org.nz/themes/base/production/images/default-profile.png" alt="Profile Picture" width="200" height="200">
             </figure>
         </section>
-        <section id="description">
-            <p>Description Here</p>
-        </section>
         <section id="info">
             <ul>
                 <li><a href="edit.php">Edit Profile</a></li>
             </ul>
-            <p>Username</p>
-            <p>First/Last</p>
-            <p>Gender</p>
-            <p>Animal Choice</p>
+            <div>
+                <p><i>Description Here</i>
+                <a href="editController.php"><img src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a></p>
+                <p><i>Username</i>
+                <a href="editController.php"><img src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a></p>
+                <p><i>First/Last</i>
+                <a href="editController.php"><img src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a></p>
+                <p><i>Gender</i>
+                <a href="editController.php"><img src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a></p>
+                <p><i>Animal Choice</i>
+                <a href="editController.php"><img src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a></p>
+            </div>
         </section>
         <section id="profilefeed">
             <fieldset>
