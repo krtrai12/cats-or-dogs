@@ -8,15 +8,15 @@
         </section>
         <section id="info">
             <div>
-                <p><?php if (isset($_SESSION['username'])) { echo '<p>' . $_SESSION['username'] . '</p>' } else { echo '<i>Description Here</i>' } ?>
+                <p><?php echo 'Username: '; echo $_SESSION['username']; ?>
                 <a href="editController.php"><img src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a></p>
-                <p><i>Username</i>
+                <p><?php echo 'Name: '; echo $_SESSION['first']; echo ' '; echo $_SESSION['last']; ?>
                 <a href="editController.php"><img src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a></p>
-                <p><i>First/Last</i>
+                <p><?php echo 'Gender: '; echo $_SESSION['gender']; ?>
                 <a href="editController.php"><img src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a></p>
-                <p><i>Gender</i>
+                <p><?php if (isset($_SESSION['animalchoice'])) { echo 'Animal Choice: '; echo $_SESSION['animalchoice']; } else { echo '<i>Animal choice</i>'; } ?>
                 <a href="editController.php"><img src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a></p>
-                <p><i>Animal Choice</i>
+                <p><?php if (isset($_SESSION['description'])) { echo 'Description: '; echo $_SESSION['description']; } else { echo '<i>Your Description</i>'; } ?>
                 <a href="editController.php"><img src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a></p>
             </div>
         </section>
