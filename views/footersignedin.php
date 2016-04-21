@@ -5,7 +5,8 @@
                     <li <?php if ($_SERVER['REQUEST_URI'] == '/mainController.php') echo 'class="active"'; ?>><a href="../mainController.php">HOME</a></li>
                     <li <?php if ($_SERVER['REQUEST_URI'] == '/profileController.php') echo 'class="active"'; ?>><a href="../profileController.php">PROFILE</a></li>
                     <li <?php if ($_SERVER['REQUEST_URI'] == '/about.php') echo 'class="active"'; ?>><a href="../about.php">ABOUT US</a></li>
-                    <li <?php if ($_SERVER['REQUEST_URI'] == '/index.php') { unset($_SESSION['user_id']); header('Location: ./'); exit(); } ?>><a href="../index.php">LOG OUT</a></li>
+                    <li <?php if ($_SERVER['REQUEST_URI'] == '/index.php') { unset($_SESSION['username']); unset($_SESSION['first']); unset($_SESSION['last']);
+                            unset($_SESSION['gender']); unset($_SESSION['animalchoice']); unset($_SESSION['description']); header('Location: ./'); exit(); } ?>><a href="../index.php">LOG OUT</a></li>
                     <form class="col-sm-4">
                         <div class="dropup">
                             <input type="text" class="form-control" data-toggle="dropdown" id="people" placeholder="Search people" autofocus>

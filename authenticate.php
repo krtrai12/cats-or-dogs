@@ -50,19 +50,19 @@ if (isset($_POST['signinusername']) && isset($_POST['signinpassword'])) {
             
         if ($success) {
             session_regenerate_id(true); // New session for login
-            $_SESSION['user_id'] = $_POST['signinusername'];
+            $_SESSION['username'] = $_POST['signinusername'];
+            $data = $user->getUserDetails($_SESSION['username']);
+            $_SESSION['first'] = $data['first'];
+            $_SESSION['last'] = $data['last'];
+            $_SESSION['gender'] = $data['gender'];
+            $_SESSION['animalchoice'] = $data['animalchoice'];
+            $_SESSION['description'] = $data['description'];
             header('Location: ./');
             exit();
         } else {
             $_SESSION['message'] = 'Invalid Account Credentials.';
             header('Location: signinController.php');
             exit();
-        }
-        
+        }        
     }
-    
-}
-
-if (isset($_POST['logout'])) {
-    unset($_SESSION['user_id']);
 }
