@@ -30,8 +30,7 @@ div {
     background: #18a190;
     margin: 2.5%;
     padding: 1%;
-    height: 30%;
-    min-height: 200px;
+    height: 200px;
     width: 25%;
     min-width: 300px;
     border-radius: 10px;
@@ -46,6 +45,7 @@ div {
 img {
     margin: auto;
     height: inherit;
+    width: 290;
 }
 
 form {
