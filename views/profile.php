@@ -8,7 +8,7 @@
         </section>
         <section id="info">
             <div>
-                <p><i>Description Here</i>
+                <p><?php if (isset($_SESSION['username'])) { echo '<p>' . $_SESSION['username'] . '</p>' } else { echo '<i>Description Here</i>' } ?>
                 <a href="editController.php"><img src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a></p>
                 <p><i>Username</i>
                 <a href="editController.php"><img src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a></p>

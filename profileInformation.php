@@ -18,7 +18,7 @@ if (isset($_POST['description']) || isset($_POST['gender']) || isset($_POST['fir
         require_once('models/user.php');
         $user = new User($db);
         
-        $data = $user->getUserDetails($_SESSION['user_info']);
+        $data = $user->getUserDetails($_SESSION['username']);
         
         if (!isset($_POST['description'])) {
             $_POST['description'] = $data['description'];
