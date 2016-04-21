@@ -4,18 +4,18 @@
 if (isset($_POST['people'])) {
   $pattern = $_POST['people'] . '%';
   
-  require_once('../models/database.php');
+  require_once('/var/www/html/models/database.php');
   $db = databaseConnection();
   
   // Send a response if we can
   if (isset($db)) {
-    $selection = $db->prepare('select name from users where name like :people');
+    $selection = $db->prepare('select first from users where first like :people');
     $selection->bindParam(':people', $pattern);
     $selection->execute();
     
     // Response is in HTML format
     foreach ($selection as $row) {
-      echo ("<li>$row[name]</li>");
+      echo ("<li>$row[first]<li>");
     }
   }
   

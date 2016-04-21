@@ -1,7 +1,7 @@
 $(document).ready(function() {
         
         // Arrange to suggest country names as we type
-        $('#country').on('keyup click', function() {
+        $('#people').on('keyup click', function() {
           var input = $(this);
           var search = $(this).val().trim();
           var dropdown = $('#people-dropdown');
