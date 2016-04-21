@@ -51,12 +51,12 @@ if (isset($_POST['signinusername']) && isset($_POST['signinpassword'])) {
         if ($success) {
             session_regenerate_id(true); // New session for login
             $_SESSION['username'] = $_POST['signinusername'];
-            //$data = $user->getUserDetails($_POST['signinusername']);
-            //$_SESSION['first'] = $data['first'];
-            //$_SESSION['last'] = $data['last'];
-            //$_SESSION['gender'] = $data['gender'];
-            //$_SESSION['animalchoice'] = $data['animal_choice'];
-            //$_SESSION['description'] = $data['description'];
+            $data = $user->getUserDetails($_POST['signinusername']);
+            $_SESSION['first'] = $data['first'];
+            $_SESSION['last'] = $data['last'];
+            $_SESSION['gender'] = $data['gender'];
+            $_SESSION['animalchoice'] = $data['animal_choice'];
+            $_SESSION['description'] = $data['description'];
             header('Location: ./');
             exit();
         } else {

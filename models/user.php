@@ -41,7 +41,7 @@ class User {
         $select->bindParam(':username', $username, PDO::PARAM_STR);
         $select->execute();
         
-        $row = $select->fetch(PDO:FETCH_ASSOC);
+        $row = $select->fetch(PDO::FETCH_ASSOC);
         return $row;
     }
     
@@ -57,7 +57,7 @@ class User {
         $insert->bindParam(':username', $username, PDO::PARAM_STR);
         $select->execute();
         
-        $row = $select->fetch(PDO:FETCH_ASSOC);
+        $row = $select->fetch(PDO::FETCH_ASSOC);
         return $row;
     }
 }
