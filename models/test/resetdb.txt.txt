@@ -11,7 +11,8 @@ create table users (
     first VARCHAR(20) NOT NULL,
     last VARCHAR(20) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    animal_choice VARCHAR(10)
+    animal_choice VARCHAR(10),
+    description VARCHAR(255)
 );
 
 create table posts (
