@@ -9,13 +9,13 @@ if (isset($_POST['people'])) {
   
   // Send a response if we can
   if (isset($db)) {
-    $selection = $db->prepare('select first from users where first like :people');
+    $selection = $db->prepare('select first, last from users where first like :people');
     $selection->bindParam(':people', $pattern);
     $selection->execute();
     
     // Response is in HTML format
     foreach ($selection as $row) {
-      echo ("<li>$row[first]<li>");
+      echo ("<li>$row[first] $row[last]<li><br>");
     }
   }
   
