@@ -23,7 +23,6 @@
                 <img class="bothSlides" src="views/Images/CatImages/bowTieKitten.jpg">
                 <img class="bothSlides" src="views/Images/DogImages/iGotABallPup.jpg">
                 <img class="bothSlides" src="views/Images/CatImages/whatsThatCat.jpg">
-                
             </section></a>
             
             <a href="../signupController.php"><section id="dogButton">
@@ -31,8 +30,7 @@
                 <img class="dogSlides" src="views/Images/DogImages/pickMePupp.jpg">
                 <img class="dogSlides" src="views/Images/DogImages/radBeatsDawg.jpg">
                 <img class="dogSlides" src="views/Images/DogImages/wetHound.jpg">
-                <img class="dogSlides" src="views/Images/DogImages/wrinklyPuppy.jpg">
-                
+                <img class="dogSlides" src="views/Images/DogImages/wrinklyPuppy.jpg">    
             </section></a>
             
         </div>
