@@ -1,24 +1,25 @@
-
-    <body>
-        <h1>Welcome, <?php echo $_SESSION['username']?>!</h1>
-        <section id="newpost">
-            <fieldset>
-                <label>Post about your pet:</label><br>
+    <div>
+        <body>
+            <h1>Welcome, <?php echo $_SESSION['username']?>!</h1>
+            <section id="newpost">
+                <fieldset>
+                    <label>Post about your pet:</label><br>
+                    <div>
+                        <input type="text" name="newpost" placeholder="Description...">
+                    </div>
+                    <button type="submit" name="add" value="Submit">Submit</button>
+                </fieldset>
+            </section>
+            <section id="friendsfeed">
+                <div></div>
+            </section>
+            <section id="suggestions">
                 <div>
-                    <input type="text" name="newpost" placeholder="Description...">
+                    <p>Suggested Followers:</p>
+                    <ul>
+                        <p>Jokes, You Have No Friends.</p>
+                    </ul>
                 </div>
-                <button type="submit" name="add" value="Submit">Submit</button>
-            </fieldset>
-        </section>
-        <section id="friendsfeed">
-            <div></div>
-        </section>
-        <section id="suggestions">
-            <div>
-                <p>Suggested Followers:</p>
-                <ul>
-                    <p>Jokes, You Have No Friends.</p>
-                </ul>
-            </div>
-        </section>
-    </body>
+            </section>
+        </body>
+    </div>

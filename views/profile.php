@@ -3,11 +3,11 @@
         <div>
             <section id="picture">
                 <figure>
-                    <img src="https://www.junkfreejune.org.nz/themes/base/production/images/default-profile.png" alt="Profile Picture" width="200" height="200">
+                    <img id="profilePic" src="https://www.junkfreejune.org.nz/themes/base/production/images/default-profile.png" alt="Profile Picture" width="200" height="200">
                     <a href="editController.php"><img id="editPic" src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a></p>
                 </figure>
                 <p><?php echo '@'; echo $_SESSION['username']; ?>
-                <a href="editController.php"><img src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a></p>
+                <a href="editController.php"><img id="editUsername" src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a></p>
             </section>
             <section id="info">
                 <div>
