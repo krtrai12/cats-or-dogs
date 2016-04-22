@@ -7,7 +7,7 @@ $(document).ready(function() {
           var dropdown = $('#people-dropdown');
           
           // Send an AJAX request to get country names
-          $.post('searchdb.php', {people: search}, function(response) {
+          $.post('../searchdb.php', {people: search}, function(response) {
             var peopleList = $(response);
             
             // Make the countries hoverable and selectable
