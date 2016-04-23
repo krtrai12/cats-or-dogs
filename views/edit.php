@@ -29,7 +29,12 @@
                 <div><button type="submit" class="btn btn-default">Save Changes</button></div>   
             </form>
             <form>
-            <div><a href="profileController.php"><button type="submit" class="btn btn-default">Back</button></a></div>
+            <div><a href="./profileController.php"><button type="submit" class="btn btn-default">Back</button></a></div>
             </form>
         </div>
+        <?php if (isset($_SESSION['message'])): ?>
+                                <div class="row">
+                                                <p class="text-info text-center"><?php echo $_SESSION['message']; unset($_SESSION['message']);?></p>
+                                </div>
+                <?php endif; ?>
     </body>
