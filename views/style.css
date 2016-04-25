@@ -112,13 +112,6 @@ li a:hover {
     width:100%;
 }
 
-#people {
-    margin: auto;
-    right: 1%;
-    bottom: 1.5%;
-    width: 20%;
-    position: fixed;  
-}
 
 /* -------------------- Profile view -------------------- */
 #picture {
