@@ -9,7 +9,7 @@
         <form class="col-sm-4">
             <div class="dropdown">
                 <input type="text" class="form-control" data-toggle="dropdown" id="people" placeholder="Search people" autofocus>
-                <ul class="dropdown-menu" id="people-dropdown"></ul>
+                <ol class="dropdown-menu" id="people-dropdown"></ol>
             </div>
         </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
