@@ -7,13 +7,20 @@ $(document).ready(function() {
           var dropdown = $('#people-dropdown');
           
           if (event.keyCode == 13) {
+                event.preventDefault();
+                
                 // check if valid username (similar to AJAX request below)
                 // if valid, send to that profile
                 $.post('../searchdb.php', {people: search}, function(response) {
+                        console.log("this is getting");
                         function select() { input.val( $(this).html() ); }
                         var peopleList = $(response);
                         if (peopleList != null) {
-                                window.location="../views/profile.php";  
+                                console.log("this is getting here");
+                                window.location="profileController.php";  // redirect to friendProfileController
+                                                                        // when we redirect, we're going to use a "Get" for the information and have that send
+                                                                        // the information to the friend profile, and this will allow each user to have their own
+                                                                        // link to their own profile
                         }
                 });
                 
