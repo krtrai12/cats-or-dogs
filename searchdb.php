@@ -9,13 +9,20 @@ if (isset($_POST['people'])) {
   
   // Send a response if we can
   if (isset($db)) {
-    $selection = $db->prepare('select first, last from users where first like :people');
+    $selection = $db->prepare('select * from users where username like :people');
     $selection->bindParam(':people', $pattern);
     $selection->execute();
     
-    // Response is in HTML format
+    $_SESSION['friendUsername']   = $_GET['username'];
+    $_SESSION['friendFirst']   = $_GET['first'];
+    $_SESSION['friendLast']   = $_GET['last'];
+    $_SESSION['friendGender']   = $_GET['gender'];
+    $_SESSION['friendAnimalChoice']   = $_GET['animal_choice'];
+    $_SESSION['friendDescription']   = $_GET['description'];
+    
+        // Response is in HTML format
     foreach ($selection as $row) {
-      echo ("<li>$row[first] $row[last]</li>");
+      echo ("<li>$row[first] $row[last] $row[username]</li>");
     }
   }
   
