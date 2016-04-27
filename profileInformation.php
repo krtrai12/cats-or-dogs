@@ -13,45 +13,45 @@ if (isset($_POST['description']) || isset($_POST['gender']) || isset($_POST['fir
         $_SESSION['message'] = "Could not connect to the database.";
     } else {
         
-        unset($_SESSION['message']);
-        
         // Create user model
         require_once('models/user.php');
         $user = new User($db);
         
-        if (!isset($_POST['description'])) {
-            if (!isset($_SESSION['description'])) 
-                $_SESSION['description'] = NULL;
-        } else { 
-            $SESSION['description'] = $_POST['description'];
-            $descriptionsuccess = $user->setDescription($_SESSION['username'], $_SESSION['description']);
-            if ($descriptionsuccess) {
-                $_SESSION['message'] = 'Changes Saved!';
-            }
+        $username = $_SESSION['username'];
+        
+        if (isset($_POST['description'])) { 
+            $description = $_POST['description'];
+        } else {
+            $description = $_SESSION['description'];
         }
         
-        if (!isset($_POST['animalchoice'])) {
-            if (!isset($_SESSION['animalchoice'])) 
-                $_SESSION['animalchoice'] = NULL;
-        } else { 
-            $SESSION['animalchoice'] = $_POST['animalchoice'];
-            $animalsuccess = $user->setAnimalChoice($_SESSION['username'], $_SESSION['animalchoice']);
-            if ($animalsuccess)
-                $_SESSION['message'] = 'Changes Saved!';
+        if (isset($_POST['animalchoice'])) { 
+            $animalchoice = $_POST['animalchoice'];   
+        } else {
+            $animalchoice = $_SESSION['animalchoice'];
         }
             
-        if (!isset($_POST['gender'])) 
-            $SESSION['gender'] = $_POST['gender'];
-            
-        if (!isset($_POST['first'])) 
-            $SESSION['first'] = $_POST['first'];
-            
-        if (!isset($_POST['last'])) 
-            $SESSION['last'] = $_POST['last'];
+        if (isset($_POST['gender'])) {
+            $gender = $_POST['gender'];
+        } else {
+            $gender = $_SESSION['gender'];
+        }
         
-        if (isset($_POST['gender']) || isset($_POST['first']) || isset($_POST['last'])) {
-            $success = $user->setUserDetails($_SESSION['username'], $_SESSION['gender'], $_SESSION['first'], $_SESSION['last']);
+        if (isset($_POST['first'])) {
+            $first = $_POST['first'];
+        } else {
+            $first = $_SESSION['first'];
         }
+            
+        if (isset($_POST['last'])) {
+            $last = $_POST['last'];
+        } else {
+            $last = $_SESSION['last'];
+        }
+        
+        $success = $user->setUserDetails($username, $gender, $first, $last, $description, $animalchoice);
+            
+        unset($_SESSION['message']);    
             
         if ($success)
             $_SESSION['message'] = 'Changes Saved!'; 
@@ -59,6 +59,7 @@ if (isset($_POST['description']) || isset($_POST['gender']) || isset($_POST['fir
         if (!($_SESSION['message'] == 'Changes Saved!')) {
             $_SESSION['message'] = 'Changes Unsuccessful.';
         } else {
+            session_regenerate_id(true);
             $data = $user->getUserDetails($_SESSION['username']);
             $_SESSION['first'] = $data['first'];
             $_SESSION['last'] = $data['last'];

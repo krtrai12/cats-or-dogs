@@ -47,25 +47,32 @@ class User {
     
     // Getting the Details for the users profile page
     function setUserDetails($username, $gender, $first, $last) {
-        $select = $this->db->prepare('update users set gender=:gender, first=:first, last=:last where username=:username');
+        $select = $this->db->prepare('update users set gender=:gender, first=:first, last=:last, animal_choice=:animalchoice, description=:description where username=:username');
         $select->bindParam(':username', $username, PDO::PARAM_STR);
         $select->bindParam(':gender', $gender, PDO::PARAM_STR);
         $select->bindParam(':first', $first, PDO::PARAM_STR);
         $select->bindParam(':last', $last, PDO::PARAM_STR);
-        return $select->execute();
+        $select->bindParam(':animalchoice', $animalchoice, PDO::PARAM_STR);
+        $select->bindParam(':description', $description, PDO::PARAM_STR);
+        $select->execute();
+        return $select;
     }
     
+    /*
     function setDescription($username, $description) {
         $select = $this->db->prepare('update users set description=:description where username=:username');
         $select->bindParam(':username', $username, PDO::PARAM_STR);
         $select->bindParam(':description', $description, PDO::PARAM_STR);
-        return $select->execute();
+        $select->execute();
+        return $select;
     }
     
     function setAnimalChoice($username, $animalchoice) {
         $select = $this->db->prepare('update users set animal_choice=:animalchoice where username=:username');
         $select->bindParam(':username', $username, PDO::PARAM_STR);
         $select->bindParam(':animalchoice', $animalchoice, PDO::PARAM_STR);
-        return $select->execute();
+        $select->execute();
+        return $select;
     }
+    */
 }
