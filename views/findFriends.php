@@ -8,7 +8,7 @@
         </div>
         <div class="col-sm-4">
             <div class="dropdown">
-                <input type="text" autocomplete="off" class="form-control" data-toggle="dropdown" id="people" placeholder="Search people" autofocus>
+                <input type="text" autocomplete="off" class="form-control" data-toggle="dropdown" id="people" name="peopleForm" placeholder="Search people" autofocus>
                 <ol class="dropdown-menu" id="people-dropdown"></ol>
             </div>
         </div>

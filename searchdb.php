@@ -1,8 +1,10 @@
 <?php
 
+
 // Check if receiving an AJAX request
 if (isset($_POST['people'])) {
   $pattern = $_POST['people'] . '%';
+  $_SESSION['friendUsername']  = $_GET['peopleForm'];
   
   require_once('/var/www/html/models/database.php');
   $db = databaseConnection();
@@ -13,12 +15,6 @@ if (isset($_POST['people'])) {
     $selection->bindParam(':people', $pattern);
     $selection->execute();
     
-    $_SESSION['friendUsername']   = $_GET['username'];
-    $_SESSION['friendFirst']   = $_GET['first'];
-    $_SESSION['friendLast']   = $_GET['last'];
-    $_SESSION['friendGender']   = $_GET['gender'];
-    $_SESSION['friendAnimalChoice']   = $_GET['animal_choice'];
-    $_SESSION['friendDescription']   = $_GET['description'];
     
         // Response is in HTML format
     foreach ($selection as $row) {

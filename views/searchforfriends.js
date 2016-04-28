@@ -17,7 +17,7 @@ $(document).ready(function() {
                         var peopleList = $(response);
                         if (peopleList != null) {
                                 console.log("this is getting here");
-                                window.location="profileController.php";  // redirect to friendProfileController
+                                window.location="friendProfileController.php";  // redirect to friendProfileController
                                                                         // when we redirect, we're going to use a "Get" for the information and have that send
                                                                         // the information to the friend profile, and this will allow each user to have their own
                                                                         // link to their own profile
