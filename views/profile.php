@@ -22,21 +22,23 @@
             
             <section id="rest">
                 <section id="profilePost">
-
+                    <form action="profileController.php" method="post">
                         <label>Post about your pet:</label><br>
                             <input type="text" name="newpost" placeholder="Description...">
                         <button type="submit" name="add" value="Submit">Submit</button>
-
+                    </form>
                 </section>
                 
                 <section id="profileFeed" class="posts">
-                    <p> This is where my posts go:</p>
-                    <section></section>
-                    <?php foreach ($selection as $profilepost):
-                    // display all of your posts from the database here ?>
-                    
+                    <?php foreach ($selection as $row): ?>
+                        <div><p><?php echo $row['caption']; ?></p></div>
                     <?php endforeach; ?>
                 </section>
-            </section> 
+            </section>
+            <?php if (isset($_SESSION['message'])): ?>
+                <div class="row">
+                    <p class="text-info text-center"><?php echo $_SESSION['message']; unset($_SESSION['message']);?></p>
+                </div>
+            <?php endif; ?>
         </div>
     </body>

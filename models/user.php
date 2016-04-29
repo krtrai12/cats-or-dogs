@@ -41,8 +41,8 @@ class User {
         $select->bindParam(':username', $username, PDO::PARAM_STR);
         $select->execute();
         
-        $row = $select->fetch(PDO::FETCH_ASSOC);
-        return $row;
+        $result = $select->fetchAll();
+        return $result;
     }
     
     // Getting the Details for the users profile page
@@ -58,21 +58,19 @@ class User {
         return $select;
     }
     
-    /*
-    function setDescription($username, $description) {
-        $select = $this->db->prepare('update users set description=:description where username=:username');
-        $select->bindParam(':username', $username, PDO::PARAM_STR);
-        $select->bindParam(':description', $description, PDO::PARAM_STR);
-        $select->execute();
-        return $select;
+    function addPost($username, $contents) {
+        $insert = $this->db->prepare('insert into posts(posted_by,caption,timestamp,reported) values(:posted_by,:caption,NOW(),0)');
+        $insert->bindParam(':posted_by', $username, PDO::PARAM_STR);
+        $insert->bindParam(':caption', $contents, PDO::PARAM_STR);
+        return $insert->execute();
     }
     
-    function setAnimalChoice($username, $animalchoice) {
-        $select = $this->db->prepare('update users set animal_choice=:animalchoice where username=:username');
+    // Getting the Details for the users profile page
+    function getPosts($username) {
+        $select = $this->db->prepare('select * from posts where posted_by=:username order by timestamp');
         $select->bindParam(':username', $username, PDO::PARAM_STR);
-        $select->bindParam(':animalchoice', $animalchoice, PDO::PARAM_STR);
         $select->execute();
-        return $select;
+        $result = $select->fetchAll();
+        return $result;
     }
-    */
 }

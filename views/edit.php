@@ -28,13 +28,11 @@
                 </div>
                 <div><button type="submit">Save Changes</button></div>   
             </form>
-            <form>
                 <div><a href="profileController.php"><button>Back</button></a></div>
-            </form>
         </div>
         <?php if (isset($_SESSION['message'])): ?>
-                                <div class="row">
-                                                <p class="text-info text-center"><?php echo $_SESSION['message']; unset($_SESSION['message']);?></p>
-                                </div>
-                <?php endif; ?>
+                <div class="row">
+                        <p class="text-info text-center"><?php echo $_SESSION['message']; unset($_SESSION['message']);?></p>
+                </div>
+        <?php endif; ?>
     </body>
