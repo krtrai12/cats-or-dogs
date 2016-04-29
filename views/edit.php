@@ -1,35 +1,35 @@
     <body>
             <h1>Edit Profile</h1>
-            <form action="../profileInformation.php" method="post">
+            <form action="profileInformation.php" method="post">
                 <div class="form-group">
                     <label>Description Here</label>
-                    <input type="text" name="description"
-                        <?php if (isset($_SESSION['description'])) echo 'placeholder=' . $_SESSION['description'] . ' '; ?>>
+                    <input type="text" name="newdescription"
+                        <?php if (isset($_SESSION['description'])) echo 'value=' . $_SESSION['description'] . ' '; ?>>
                 </div>
                 <div class="form-group">
                     <label>First Name</label>
-                    <input type="text" name="first"
-                        <?php if (isset($_SESSION['first'])) echo 'placeholder=' . $_SESSION['first'] . ' '; ?>>
+                    <input type="text" name="newfirst"
+                        <?php if (isset($_SESSION['first'])) echo 'value=' . $_SESSION['first'] . ' '; ?>>
                 </div>
                 <div class="form-group">
                     <label>Last Name</label>
-                    <input type="text" name="last"
-                        <?php if (isset($_SESSION['last'])) echo 'placeholder=' . $_SESSION['last'] . ' '; ?>>
+                    <input type="text" name="newlast"
+                        <?php if (isset($_SESSION['last'])) echo 'value=' . $_SESSION['last'] . ' '; ?>>
                 </div>
                 <div class="form-group">
                     <label>Gender</label>
-                    <input type="text" name="gender"
-                        <?php if (isset($_SESSION['gender'])) echo 'placeholder=' . $_SESSION['gender'] . ' '; ?>>
+                    <input type="text" name="newgender"
+                        <?php if (isset($_SESSION['gender'])) echo 'value=' . $_SESSION['gender'] . ' '; ?>>
                 </div>
                 <div class="form-group">
                     <label>Animal Choice</label>
-                    <input type="text" name="animalchoice"
-                        <?php if (isset($_SESSION['animalchoice'])) echo 'placeholder=' . $_SESSION['animalchoice'] . ' '; ?>>
+                    <input type="text" name="newanimalchoice"
+                        <?php if (isset($_SESSION['animalchoice'])) echo 'value=' . $_SESSION['animalchoice'] . ' '; ?>>
                 </div>
                 <div><button type="submit">Save Changes</button></div>   
             </form>
             <form>
-            <div><a href="profileController.php"><button>Back</button></a></div>
+                <div><a href="profileController.php"><button>Back</button></a></div>
             </form>
         </div>
         <?php if (isset($_SESSION['message'])): ?>

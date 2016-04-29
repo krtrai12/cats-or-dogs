@@ -3,7 +3,7 @@
 session_start();
 
 // Should have form inputs
-if (isset($_POST['description']) || isset($_POST['gender']) || isset($_POST['first']) || isset($_POST['last']) || isset($_POST['animalchoice'])) {
+if (isset($_POST['newdescription']) || isset($_POST['newgender']) || isset($_POST['newfirst']) || isset($_POST['newlast']) || isset($_POST['newanimalchoice'])) {
     
     // Connect to database
     require_once('/var/www/html/models/database.php');
@@ -17,49 +17,55 @@ if (isset($_POST['description']) || isset($_POST['gender']) || isset($_POST['fir
         require_once('models/user.php');
         $user = new User($db);
         
+        unset($_SESSION['message']);
+        
         $username = $_SESSION['username'];
         
-        if (isset($_POST['description'])) { 
-            $description = $_POST['description'];
+        if (!isset($_POST['newgender']) || !isset($_POST['newfirst']) || !isset($_POST['newlast'])) {
+            $_SESSION['message'] = 'Changes Unsuccessful.';
+            header('Location: profileController.php');
+            exit();
+        }
+        
+        if (isset($_POST['newdescription'])) { 
+            $description = $_POST['newdescription'];
         } else {
             $description = $_SESSION['description'];
         }
         
-        if (isset($_POST['animalchoice'])) { 
-            $animalchoice = $_POST['animalchoice'];   
+        if (isset($_POST['newanimalchoice'])) { 
+            $animalchoice = $_POST['newanimalchoice'];   
         } else {
             $animalchoice = $_SESSION['animalchoice'];
         }
             
-        if (isset($_POST['gender'])) {
-            $gender = $_POST['gender'];
+        if (isset($_POST['newgender'])) {
+            $gender = $_POST['newgender'];
         } else {
             $gender = $_SESSION['gender'];
         }
         
-        if (isset($_POST['first'])) {
-            $first = $_POST['first'];
+        if (isset($_POST['newfirst'])) {
+            $first = $_POST['newfirst'];
         } else {
             $first = $_SESSION['first'];
         }
             
-        if (isset($_POST['last'])) {
-            $last = $_POST['last'];
+        if (isset($_POST['newlast'])) {
+            $last = $_POST['newlast'];
         } else {
             $last = $_SESSION['last'];
         }
         
-        $success = $user->setUserDetails($username, $gender, $first, $last, $description, $animalchoice);
+        $success = $user->setUserDetails($username, $gender, $first, $last, $description, $animalchoice);   
             
-        unset($_SESSION['message']);    
-            
-        if ($success)
+        if ($success) {
             $_SESSION['message'] = 'Changes Saved!'; 
+        }
         
         if (!($_SESSION['message'] == 'Changes Saved!')) {
             $_SESSION['message'] = 'Changes Unsuccessful.';
         } else {
-            session_regenerate_id(true);
             $data = $user->getUserDetails($_SESSION['username']);
             $_SESSION['first'] = $data['first'];
             $_SESSION['last'] = $data['last'];
@@ -68,7 +74,7 @@ if (isset($_POST['description']) || isset($_POST['gender']) || isset($_POST['fir
             $_SESSION['description'] = $data['description'];
         }
         
-        header('Location: editController.php');
+        header('Location: profileController.php');
         exit();
         
     }

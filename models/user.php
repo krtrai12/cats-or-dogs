@@ -46,7 +46,7 @@ class User {
     }
     
     // Getting the Details for the users profile page
-    function setUserDetails($username, $gender, $first, $last) {
+    function setUserDetails($username, $gender, $first, $last, $animalchoice, $description) {
         $select = $this->db->prepare('update users set gender=:gender, first=:first, last=:last, animal_choice=:animalchoice, description=:description where username=:username');
         $select->bindParam(':username', $username, PDO::PARAM_STR);
         $select->bindParam(':gender', $gender, PDO::PARAM_STR);
