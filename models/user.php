@@ -58,10 +58,12 @@ class User {
         return $select;
     }
     
-    function addPost($username, $contents) {
-        $insert = $this->db->prepare('insert into posts(posted_by,caption,timestamp,reported) values(:posted_by,:caption,NOW(),0)');
+    function addPost($username, $contents, $image, $name) {
+        $insert = $this->db->prepare('insert into posts(posted_by,image_name,image,caption,timestamp,reported) values(:posted_by,:name,:image,:caption,NOW(),0)');
         $insert->bindParam(':posted_by', $username, PDO::PARAM_STR);
         $insert->bindParam(':caption', $contents, PDO::PARAM_STR);
+        $insert->bindParam(':image', $image, PDO::PARAM_LOB);
+        $insert->bindParam(':name', $name, PDO::PARAM_STR);
         return $insert->execute();
     }
     

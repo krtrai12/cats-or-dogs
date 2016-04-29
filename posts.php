@@ -15,7 +15,15 @@ if (!isset($db)) {
     $selection = $user->getPosts($_SESSION['username']);
     
     // Should have form inputs
-    if (isset($_POST['add'])) {     
-        $success = $user->addPost($_SESSION['username'], $_POST['newpost']);
+    if (isset($_POST['add'])) {
+        if (getimagesize($_FILES['image']['tmp_name']) == FALSE) {
+            echo "Please select an image.";
+        } else {
+            $image = addslashes($_FILES['image']['tmp_name']);
+            $name = addslashes($_FILES['image']['name']);
+            $image = file_get_contents($image);
+            $image = base64_encode($image);
+            $success = $user->addPost($_SESSION['username'], $_POST['newpost'], $image, $name);
+        }
     }
 }

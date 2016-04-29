@@ -22,18 +22,21 @@
             
             <section id="rest">
                 <section id="profilePost">
-                    <form action="profileController.php" method="post">
+                    <form action="profileController.php" method="post" enctype="multipart/form-data">
                         <label>Post about your pet:</label><br>
+                            <input type="file" name="image">
                             <input type="text" name="newpost" placeholder="Description...">
-                        <button type="submit" name="add" value="Submit">Submit</button>
+                            <input type="submit" name="add" value="Upload">
                     </form>
                 </section>
                 
                 <section id="profileFeed" class="posts">
                     <?php foreach ($selection as $row): ?>
-                        <div><p><?php echo $row['caption']; ?></p>
+                        <div><?php echo '<img height="300" width="300" src="data:image;base64,' . $row['image'] . ' "> '; ?>
+                            <p><?php echo $row['caption']; ?></p>
                         <h6><?php echo "Posted by: "; echo $row['posted_by']; echo " at "; echo $row['timestamp']; ?></h6></div>
-                        <button type="submit" name="delete" value="Delete">Delete</button>
+                        <div><input type="text" name="newcomment" placeholder="Comment">
+                        <button type="submit" name="delete" value="Delete">Delete</button></div>
                     <?php endforeach; ?>
                 </section>
             </section>
