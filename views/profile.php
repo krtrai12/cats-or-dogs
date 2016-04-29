@@ -31,7 +31,9 @@
                 
                 <section id="profileFeed" class="posts">
                     <?php foreach ($selection as $row): ?>
-                        <div><p><?php echo $row['caption']; ?></p></div>
+                        <div><p><?php echo $row['caption']; ?></p>
+                        <h6><?php echo "Posted by: "; echo $row['posted_by']; echo " at "; echo $row['timestamp']; ?></h6></div>
+                        <button type="submit" name="delete" value="Delete">Delete</button>
                     <?php endforeach; ?>
                 </section>
             </section>
