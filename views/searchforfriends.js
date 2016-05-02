@@ -13,11 +13,12 @@ $(document).ready(function() {
                 // if valid, send to that profile
                 $.post('../searchdb.php', {people: search}, function(response) {
                         console.log("this is getting");
-                        function select() { input.val( $(this).html() ); }
+                        console.log(response);
                         var peopleList = $(response);
-                        if (peopleList != null) {
+                        if (peopleList.size() == 1) {
                                 console.log("this is getting here");
-                                window.location="friendProfileController.php";  // redirect to friendProfileController
+                                //onclick="location.href='http://www.website.com/search/'+document.getElementById('search').value;"
+                                window.location="friendProfileController.php?friendUsername="+peopleList.text();  // redirect to friendProfileController
                                                                         // when we redirect, we're going to use a "Get" for the information and have that send
                                                                         // the information to the friend profile, and this will allow each user to have their own
                                                                         // link to their own profile
