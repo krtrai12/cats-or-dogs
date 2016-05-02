@@ -69,7 +69,7 @@ class User {
     
     // Getting the Details for the users profile page
     function getPosts($username) {
-        $select = $this->db->prepare('select * from posts where posted_by=:username order by timestamp');
+        $select = $this->db->prepare('select * from posts where posted_by=:username order by timestamp desc');
         $select->bindParam(':username', $username, PDO::PARAM_STR);
         $select->execute();
         $result = $select->fetchAll();

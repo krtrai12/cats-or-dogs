@@ -12,8 +12,6 @@ if (!isset($db)) {
     require_once('models/user.php');
     $user = new User($db);
     
-    $selection = $user->getPosts($_SESSION['username']);
-    
     // Should have form inputs
     if (isset($_POST['add'])) {
         if (getimagesize($_FILES['image']['tmp_name']) == FALSE) {
@@ -26,4 +24,5 @@ if (!isset($db)) {
             $success = $user->addPost($_SESSION['username'], $_POST['newpost'], $image, $name);
         }
     }
+    $selection = $user->getPosts($_SESSION['username']);
 }
