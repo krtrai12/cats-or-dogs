@@ -24,5 +24,6 @@ if (!isset($db)) {
             $success = $user->addPost($_SESSION['username'], $_POST['newpost'], $image, $name);
         }
     }
+    
     $selection = $user->getPosts($_SESSION['username']);
 }
