@@ -17,7 +17,7 @@ if (isset($_POST['people'])) {
     
         // Response is in HTML format
     foreach ($selection as $row) {
-      echo ("<li>$row[first] $row[last] $row[username]</li>");
+      echo ("<li>$row[username]</li>");
     }
   }
   
