@@ -21,6 +21,7 @@ $(document).ready(function() {
                                                                         // when we redirect, we're going to use a "Get" for the information and have that send
                                                                         // the information to the friend profile, and this will allow each user to have their own
                                                                         // link to their own profile
+                                                                        //header("location:savefriendProfileController.php?friendUsername=".$pattern);
                         }
                 });
                 

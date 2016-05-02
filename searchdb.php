@@ -4,7 +4,6 @@
 // Check if receiving an AJAX request
 if (isset($_POST['people'])) {
   $pattern = $_POST['people'] . '%';
-  $_SESSION['friendUsername']  = $_GET['peopleForm'];
   
   require_once('/var/www/html/models/database.php');
   $db = databaseConnection();
