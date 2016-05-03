@@ -6,6 +6,7 @@ session_start();
 //require(isset($_SESSION['user_id']) ? 'views/main.php' : 'views/home.php');
 require('views/header.php');
 if (isset($_SESSION['username'])) {
+    require('mainposts.php');
     require('views/main.php');
     require('views/footersignedin.php');
 } else {

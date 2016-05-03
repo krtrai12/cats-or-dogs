@@ -11,7 +11,16 @@
                 </fieldset>
             </section>
             <section id="friendsfeed">
-                <div></div>
+                <?php foreach ($selection as $row): ?>
+                    <div><?php echo '<img height="300" width="300" src="data:image;base64,' . $row['image'] . ' "> '; ?>
+                        <p><?php echo $row['caption']; ?></p>
+                        <h6><?php echo "Posted by: "; echo $row['posted_by']; echo " at "; echo $row['timestamp']; ?></h6>
+                    </div>
+                    <div>
+                        <input type="text" name="newcomment" placeholder="Comment">
+                        <input type="hidden" name="postid" value="<?php echo $row['post_id']; ?>">
+                    </div>
+                <?php endforeach; ?> 
             </section>
             <section id="suggestions">
                 <div>
