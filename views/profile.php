@@ -29,15 +29,20 @@
                             <input type="submit" name="add" value="Upload">
                     </form>
                 </section>
-                
                 <section id="profileFeed" class="posts">
                     <?php foreach ($selection as $row): ?>
-                        <div><?php echo '<img height="300" width="300" src="data:image;base64,' . $row['image'] . ' "> '; ?>
-                            <p><?php echo $row['caption']; ?></p>
-                        <h6><?php echo "Posted by: "; echo $row['posted_by']; echo " at "; echo $row['timestamp']; ?></h6></div>
-                        <div><input type="text" name="newcomment" placeholder="Comment">
-                        <button type="submit" name="delete" value="Delete">Delete</button></div>
-                    <?php endforeach; ?>
+                        <form action="posts.php" method="post">
+                            <div><?php echo '<img height="300" width="300" src="data:image;base64,' . $row['image'] . ' "> '; ?>
+                                <p><?php echo $row['caption']; ?></p>
+                                <h6><?php echo "Posted by: "; echo $row['posted_by']; echo " at "; echo $row['timestamp']; ?></h6>
+                            </div>
+                            <div>
+                                <input type="text" name="newcomment" placeholder="Comment">
+                                <input type="hidden" name="postid" value="<?php echo $row['post_id']; ?>">
+                                <button type="submit" name="delete" value="Delete">Delete</button>
+                            </div>
+                        </form>
+                    <?php endforeach; ?>  
                 </section>
             </section>
             <?php if (isset($_SESSION['message'])): ?>

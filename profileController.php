@@ -1,7 +1,5 @@
 <?php // Controller for the home page
 
-session_start();
-
 require('posts.php');
 
 // Show the about us page

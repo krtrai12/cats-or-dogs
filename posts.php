@@ -1,5 +1,7 @@
 <?php // Controller for registration/login
 
+session_start();
+
 // Connect to database
 require_once('/var/www/html/models/database.php');
 $db = databaseConnection();
@@ -23,6 +25,13 @@ if (!isset($db)) {
             $image = base64_encode($image);
             $success = $user->addPost($_SESSION['username'], $_POST['newpost'], $image, $name);
         }
+    }
+    
+    if (isset($_POST['delete'])) {
+        $user->removePost($_POST['postid']);
+        
+        header('Location: profileController.php');
+        exit();
     }
     
     $selection = $user->getPosts($_SESSION['username']);

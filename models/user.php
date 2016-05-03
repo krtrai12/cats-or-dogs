@@ -75,4 +75,10 @@ class User {
         $result = $select->fetchAll();
         return $result;
     }
+    
+    function removePost($pictureid) {
+        $delete = $this->db->prepare('delete from posts where post_id=:picid');
+        $delete->bindParam(':picid', $pictureid, PDO::PARAM_INT);
+        $delete->execute();
+    }
 }
