@@ -75,6 +75,7 @@ class User {
         return $result;
     }
     
+    
     function getAllPosts() {
         $select = $this->db->prepare('select * from posts order by timestamp desc');
         $select->execute();
