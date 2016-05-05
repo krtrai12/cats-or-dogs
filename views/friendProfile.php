@@ -14,7 +14,7 @@
                     <p><?php echo 'Name: '; echo $friendFirst; echo ' '; echo $friendLast; echo ' (@'; echo $_GET['friendUsername'];  echo ')'; ?></p>
                     <p><?php echo 'Gender: '; echo $friendGender; ?></p>
                     <p><?php if (isset($friendAnimal)) { echo 'Animal Choice: '; echo $friendAnimal; } else { echo '<i>Animal choice</i>'; } ?></p>
-                    <p><?php if (isset($friendAnimal)) { echo 'Description: '; echo $friendDescription; } else { echo '<i>Your Description</i>'; } ?></p>
+                    <p><?php if (isset($friendDescription)) { echo 'Description: '; echo $friendDescription; } else { echo '<i>Your Description</i>'; } ?></p>
                 </section>
             </section>
             

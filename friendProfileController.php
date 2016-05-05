@@ -9,23 +9,25 @@ $name = $_GET["friendUsername"];
 
 // Send a response if we can
 if (isset($db)) {
-  $selection = $db->prepare('select * from users where username = :name');
-  $selection->bindParam(':name', $name);
-  $selection->execute();
   
+  // Create user model
+  require_once('models/user.php');
+  $user = new User($db);
+  
+  $selection = $user->getUserDetails($name); 
   
   // the query should only return one row
   foreach ($selection as $row) {
     $friendFirst = $row['first'];
-    $friendLast = $row['last'];
     $friendLast = $row['last'];
     $friendGender = $row['gender'];
     $friendAnimal = $row['animal_choice'];
     $friendDescription = $row['description'];
     break;
   }
+    
+  $selection = $user->getPosts($name); 
 }
-
 
 // Show the about us page
 require('views/header.php');

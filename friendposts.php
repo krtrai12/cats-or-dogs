@@ -1,7 +1,5 @@
 <?php // Controller for registration/login
 
-session_start();
-
 // Connect to database
 require_once('/var/www/html/models/database.php');
 $db = databaseConnection();
