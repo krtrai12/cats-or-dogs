@@ -1,15 +1,6 @@
     <div>
         <body>
             <h1>Welcome, <?php echo $_SESSION['username']?>!</h1>
-            <section id="newpost">
-                <fieldset>
-                    <label>Post about your pet:</label><br>
-                    <div>
-                        <input type="text" name="newpost" placeholder="Description...">
-                    </div>
-                    <button type="submit" name="add" value="Submit">Submit</button>
-                </fieldset>
-            </section>
             <section id="friendsfeed">
                 <?php foreach ($selection as $row): ?>
                     <div><?php echo '<img height="300" width="300" src="data:image;base64,' . $row['image'] . ' "> '; ?>

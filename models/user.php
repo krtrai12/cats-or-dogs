@@ -87,4 +87,20 @@ class User {
         $delete->bindParam(':picid', $pictureid, PDO::PARAM_INT);
         $delete->execute();
     }
+    
+    function addComment($username, $contents) {
+        $insert = $this->db->prepare('insert into comments(comment_id,comment_by,timestamp,content,comment_on,reported) values(:comment_id,:comment_by,NOW(),:content,:comment_on,0)');
+        $insert->bindParam(':posted_by', $username, PDO::PARAM_STR);
+        $insert->bindParam(':caption', $contents, PDO::PARAM_STR);
+        $insert->bindParam(':image', $image, PDO::PARAM_LOB);
+        $insert->bindParam(':name', $name, PDO::PARAM_STR);
+        return $insert->execute();
+    
+        comment_id INT AUTO_INCREMENT PRIMARY KEY,
+    comment_by VARCHAR(20) NOT NULL,
+    timestamp TIMESTAMP NOT NULL,
+    content VARCHAR(255),
+    comment_on INT,
+    reported TINYINT(1) NOT NULL
+    }
 }
