@@ -96,11 +96,11 @@ class User {
         $insert->bindParam(':name', $name, PDO::PARAM_STR);
         return $insert->execute();
     
-        comment_id INT AUTO_INCREMENT PRIMARY KEY,
-    comment_by VARCHAR(20) NOT NULL,
-    timestamp TIMESTAMP NOT NULL,
-    content VARCHAR(255),
-    comment_on INT,
-    reported TINYINT(1) NOT NULL
+        //comment_id INT AUTO_INCREMENT PRIMARY KEY,
+    //comment_by VARCHAR(20) NOT NULL,
+    //timestamp TIMESTAMP NOT NULL,
+    //content VARCHAR(255),
+    //comment_on INT,
+    //reported TINYINT(1) NOT NULL
     }
 }
