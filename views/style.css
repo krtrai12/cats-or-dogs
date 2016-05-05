@@ -210,7 +210,14 @@ ol li:hover {
 }
 
 /* -------------------- Profile Posts -------------------- */
+#feedPost {
+    background: #18a190;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
 
-
-
+#feedPost p {
+    float: right;
+    text-align: left;
+}
 
