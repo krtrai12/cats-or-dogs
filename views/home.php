@@ -15,10 +15,13 @@
                 <!--<img class="slides" src="http://i0.wp.com/www.forkauaionline.com/wp-content/uploads/2016/02/Cute-puppy-kissing-kitten-for-Animal-Chat-clear-background.png?fit=1280%2C862">-->
                 <img class="bothSlides" src="views/Images/DogImages/wrinklyPuppy.jpg">
                 <img class="bothSlides" src="views/Images/CatImages/greyCat.jpg">
+                <img class="bothSlides" src="views/Images/CatImages/catdog2.jpg">
                 <img class="bothSlides" src="views/Images/DogImages/wetHound.jpg">
                 <img class="bothSlides" src="views/Images/CatImages/orangeCatOnBack.jpg">
+                <img class="bothSlides" src="views/Images/CatImages/catdog3.jpg">
                 <img class="bothSlides" src="views/Images/DogImages/radBeatsDawg.jpg">
                 <img class="bothSlides" src="views/Images/CatImages/moreKittens.jpg">
+                <img class="bothSlides" src="views/Images/CatImages/catdog1.png">
                 <img class="bothSlides" src="views/Images/DogImages/pickMePupp.jpg">
                 <img class="bothSlides" src="views/Images/CatImages/bowTieKitten.jpg">
                 <img class="bothSlides" src="views/Images/DogImages/iGotABallPup.jpg">
