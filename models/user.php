@@ -94,7 +94,6 @@ class User {
         $insert->bindParam(':comment_on', $post_id, PDO::PARAM_STR);
         $insert->bindParam(':content', $content, PDO::PARAM_STR);
         return $insert->execute();
-    
     }
     
     function getComments($post_id) {
