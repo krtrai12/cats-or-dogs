@@ -96,6 +96,5 @@ class User {
         $insert->bindParam(':name', $name, PDO::PARAM_STR);
         return $insert->execute();
     
-
     }
 }

@@ -4,27 +4,27 @@
                 <div class="form-group">
                     <label>Description Here</label>
                     <input type="text" name="newdescription"
-                        <?php if (isset($_SESSION['description'])) echo 'value=' . $_SESSION['description'] . ' '; ?>>
+                        <?php if (isset($_SESSION['description'])) echo 'value=' . $_SESSION['description']; ?>>
                 </div>
                 <div class="form-group">
                     <label>First Name</label>
                     <input type="text" name="newfirst"
-                        <?php if (isset($_SESSION['first'])) echo 'value=' . $_SESSION['first'] . ' '; ?>>
+                        <?php if (isset($_SESSION['first'])) { echo 'value=' . $_SESSION['first']; } ?>>
                 </div>
                 <div class="form-group">
                     <label>Last Name</label>
                     <input type="text" name="newlast"
-                        <?php if (isset($_SESSION['last'])) echo 'value=' . $_SESSION['last'] . ' '; ?>>
+                        <?php if (isset($_SESSION['last'])) { echo 'value=' . $_SESSION['last']; } ?>>
                 </div>
                 <div class="form-group">
                     <label>Gender</label>
                     <input type="text" name="newgender"
-                        <?php if (isset($_SESSION['gender'])) echo 'value=' . $_SESSION['gender'] . ' '; ?>>
+                        <?php if (isset($_SESSION['gender'])) { echo 'value=' . $_SESSION['gender']; } ?>>
                 </div>
                 <div class="form-group">
                     <label>Animal Choice</label>
                     <input type="text" name="newanimalchoice"
-                        <?php if (isset($_SESSION['animalchoice'])) echo 'value=' . $_SESSION['animalchoice'] . ' '; ?>>
+                        <?php if (isset($_SESSION['animalchoice'])) { echo 'value=' . $_SESSION['animalchoice']; } ?>>
                 </div>
                 <div><button type="submit">Save Changes</button></div>   
             </form>

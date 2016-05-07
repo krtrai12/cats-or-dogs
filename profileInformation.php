@@ -21,40 +21,60 @@ if (isset($_POST['newdescription']) || isset($_POST['newgender']) || isset($_POS
         
         $username = $_SESSION['username'];
         
-        if (!isset($_POST['newgender']) || !isset($_POST['newfirst']) || !isset($_POST['newlast'])) {
+        if ($_POST['newgender'] == NULL || $_POST['newfirst'] == NULL || $_POST['newlast'] == NULL) {
             $_SESSION['message'] = 'Changes Unsuccessful.';
-            header('Location: profileController.php');
+            header('Location: editController.php');
             exit();
         }
         
-        if (isset($_POST['newdescription'])) { 
+        if ($_POST['newdescription'] != NULL) { 
             $description = $_POST['newdescription'];
         } else {
-            $description = $_SESSION['description'];
+            if ($_SESSION['description'] != NULL) { 
+                $description = $_SESSION['description'];
+            } else {
+                $description = NULL;
+            }
         }
         
-        if (isset($_POST['newanimalchoice'])) { 
-            $animalchoice = $_POST['newanimalchoice'];   
+        if ($_POST['newanimalchoice'] != NULL) { 
+            $animalchoice = $_POST['newanimalchoice'];
         } else {
-            $animalchoice = $_SESSION['animalchoice'];
+            if ($_SESSION['animalchoice'] != NULL) { 
+                $animalchoice = $_SESSION['animalchoice'];
+            } else {
+                $animalchoice = NULL;
+            }
         }
             
-        if (isset($_POST['newgender'])) {
+        if ($_POST['newgender'] != NULL) {
             $gender = $_POST['newgender'];
         } else {
-            $gender = $_SESSION['gender'];
+            if ($_SESSION['gender'] != NULL) { 
+                $gender = $_SESSION['gender'];
+            } else {
+                $gender = NULL;
+            }
         }
         
-        if (isset($_POST['newfirst'])) {
+        if ($_POST['newfirst'] != NULL) {
             $first = $_POST['newfirst'];
         } else {
-            $first = $_SESSION['first'];
+            if ($_SESSION['first'] != NULL) { 
+                $first = $_SESSION['first'];
+            } else {
+                $first = NULL;
+            }
         }
             
-        if (isset($_POST['newlast'])) {
+        if ($_POST['newlast'] != NULL) {
             $last = $_POST['newlast'];
         } else {
-            $last = $_SESSION['last'];
+            if ($_SESSION['last'] != NULL) { 
+                $last = $_SESSION['last'];
+            } else {
+                $last = NULL;
+            }
         }
         
         $success = $user->setUserDetails($username, $gender, $first, $last, $description, $animalchoice);   
@@ -66,7 +86,7 @@ if (isset($_POST['newdescription']) || isset($_POST['newgender']) || isset($_POS
         if (!($_SESSION['message'] == 'Changes Saved!')) {
             $_SESSION['message'] = 'Changes Unsuccessful.';
         } else {
-            $data = $user->getUserDetails($_SESSION['username']);
+            $data = $user->getUserDetails($username);
             $_SESSION['first'] = $data['first'];
             $_SESSION['last'] = $data['last'];
             $_SESSION['gender'] = $data['gender'];
@@ -74,7 +94,7 @@ if (isset($_POST['newdescription']) || isset($_POST['newgender']) || isset($_POS
             $_SESSION['description'] = $data['description'];
         }
         
-        header('Location: profileController.php');
+        header('Location: editController.php');
         exit();
         
     }
