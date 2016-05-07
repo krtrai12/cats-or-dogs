@@ -88,6 +88,14 @@ class User {
         $delete->execute();
     }
     
+    function addProfilePicture($username, $image, $name) {
+        $insert = $this->db->prepare('insert into user(username, profilepic, profilepic_name) values(:username,:image,:name)');
+        $insert->bindParam(':username', $username, PDO::PARAM_STR);
+        $insert->bindParam(':image', $image, PDO::PARAM_LOB);
+        $insert->bindParam(':name', $name, PDO::PARAM_STR);
+        return $insert->execute();
+    }
+    
     function addComment($username, $content, $post_id) {
         $insert = $this->db->prepare('insert into comments(comment_by,timestamp,content,comment_on,reported) values(:comment_by,NOW(),:content,:comment_on,0)');
         $insert->bindParam(':comment_by', $username, PDO::PARAM_STR);
@@ -96,13 +104,11 @@ class User {
         return $insert->execute();
     }
     
-
     function getComments($post_id) {
-        $select = $this->db->prepare('select * from comments where comment_on=:post_id order by timestamp desc');
+        $select = $this->db->prepare('select * from comments where comment_on=:post_id order by timestamp');
         $select->bindParam(':post_id', $post_id, PDO::PARAM_INT);
         $select->execute();
         $result = $select->fetchAll();
         return $result;
-
     }
 }
