@@ -173,13 +173,12 @@ ol li:hover {
 #rest {
     width: 100%;
     height: auto;
-    left: 0px;
 }
 
 #profilePost {
     width: 100%;
     height: 300px; 
-    left: 0%;
+    float: left;
 }
 
 #profilePostForm {
