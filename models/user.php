@@ -96,6 +96,14 @@ class User {
         return $insert->execute();
     }
     
+    function getProfilePicture($username) {
+        $select = $this->db->prepare('select profilepic from users where username=:username');
+        $select->bindParam(':username', $username, PDO::PARAM_STR);
+        $select->execute();
+        $pic = $select->fetch(PDO::FETCH_ASSOC);
+        return $pic['profilepic'];
+    }
+    
     function addComment($username, $content, $post_id) {
         $insert = $this->db->prepare('insert into comments(comment_by,timestamp,content,comment_on,reported) values(:comment_by,NOW(),:content,:comment_on,0)');
         $insert->bindParam(':comment_by', $username, PDO::PARAM_STR);
