@@ -96,14 +96,13 @@ class User {
         return $insert->execute();
     }
     
-<<<<<<< HEAD
-=======
+
     function getComments($post_id) {
         $select = $this->db->prepare('select * from comments where comment_on=:post_id order by timestamp desc');
         $select->bindParam(':post_id', $post_id, PDO::PARAM_INT);
         $select->execute();
         $result = $select->fetchAll();
         return $result;
->>>>>>> origin/master
+
     }
 }
