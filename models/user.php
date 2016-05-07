@@ -88,13 +88,22 @@ class User {
         $delete->execute();
     }
     
-    function addComment($username, $contents) {
-        $insert = $this->db->prepare('insert into comments(comment_id,comment_by,timestamp,content,comment_on,reported) values(:comment_id,:comment_by,NOW(),:content,:comment_on,0)');
-        $insert->bindParam(':posted_by', $username, PDO::PARAM_STR);
-        $insert->bindParam(':caption', $contents, PDO::PARAM_STR);
-        $insert->bindParam(':image', $image, PDO::PARAM_LOB);
-        $insert->bindParam(':name', $name, PDO::PARAM_STR);
+    function addComment($username, $content, $post_id) {
+        $insert = $this->db->prepare('insert into comments(comment_by,timestamp,content,comment_on,reported) values(:comment_by,NOW(),:content,:comment_on,0)');
+        $insert->bindParam(':comment_by', $username, PDO::PARAM_STR);
+        $insert->bindParam(':comment_on', $post_id, PDO::PARAM_STR);
+        $insert->bindParam(':content', $content, PDO::PARAM_STR);
         return $insert->execute();
+    }
     
+<<<<<<< HEAD
+=======
+    function getComments($post_id) {
+        $select = $this->db->prepare('select * from comments where comment_on=:post_id order by timestamp desc');
+        $select->bindParam(':post_id', $post_id, PDO::PARAM_INT);
+        $select->execute();
+        $result = $select->fetchAll();
+        return $result;
+>>>>>>> origin/master
     }
 }

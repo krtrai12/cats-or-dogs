@@ -9,8 +9,20 @@
                         <h6><?php echo "Posted by: "; echo $row['posted_by']; echo " at "; echo $row['timestamp']; ?></h6>
                     </div>
                     <div>
-                        <input type="text" name="newcomment" placeholder="Comment">
-                        <input type="hidden" name="postid" value="<?php echo $row['post_id']; ?>">
+                        <?php //require('/var/www/html/comments.php') ?>
+                        <section id="postComment">
+                            <form action="comments.php" method="post">
+                                <input type="text" name="newcomment" placeholder="Comment...">
+                                <input type="submit" name="addComment" value="<?php echo $row['post_id']; ?>">
+                            </form>
+                        </section>
+                        
+                        <?php $result = $user->getComments($row['post_id']);
+                        foreach ($result as $row): ?>
+                                <p><?php echo $row['content']; ?></p>
+                                <h6><?php echo "Posted by: "; echo $row['comment_by']; echo " at "; echo $row['timestamp']; ?></h6>
+                        <?php endforeach; ?> 
+                        
                     </div>
                 </section>
                 <?php endforeach; ?> 
