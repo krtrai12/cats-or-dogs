@@ -2,7 +2,7 @@
         <div>
             <section id="rest">
                 <section id="profilePost">
-                    <form action="profileController.php" method="post" enctype="multipart/form-data">
+                    <form action="profpicController.php" method="post" enctype="multipart/form-data">
                         <label>Upload a Profile Picture:</label><br>
                             <input type="file" name="image">
                             <input type="submit" name="add" value="Upload">

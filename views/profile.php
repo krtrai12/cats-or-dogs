@@ -5,7 +5,7 @@
                 <aside id="picture">
                     <figure>
                         <img id="profilePic" src="https://www.junkfreejune.org.nz/themes/base/production/images/default-profile.png" alt="Profile Picture" width="200" height="200">
-                        <a href="editController.php"><img id="editPic" src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a>
+                        <a href="profpicController.php"><img id="editPic" src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a>
                     </figure>
                 </aside>
             

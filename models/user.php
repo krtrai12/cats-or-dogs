@@ -89,7 +89,7 @@ class User {
     }
     
     function addProfilePicture($username, $image, $name) {
-        $insert = $this->db->prepare('insert into user(username, profilepic, profilepic_name) values(:username,:image,:name)');
+        $insert = $this->db->prepare('update users set profilepic=:image, profilepic_name=:name where username=:username');
         $insert->bindParam(':username', $username, PDO::PARAM_STR);
         $insert->bindParam(':image', $image, PDO::PARAM_LOB);
         $insert->bindParam(':name', $name, PDO::PARAM_STR);
