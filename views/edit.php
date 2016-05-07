@@ -1,6 +1,6 @@
     <body>
             <h1>Edit Profile</h1>
-            <form action="profileInformation.php" method="post">
+            <form action="editController.php" method="post">
                 <div class="form-group">
                     <label>Description Here</label>
                     <input type="text" name="newdescription"

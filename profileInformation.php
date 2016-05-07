@@ -77,7 +77,7 @@ if (isset($_POST['newdescription']) || isset($_POST['newgender']) || isset($_POS
             }
         }
         
-        $success = $user->setUserDetails($username, $gender, $first, $last, $description, $animalchoice);   
+        $success = $user->setUserDetails($username, $gender, $first, $last, $animalchoice, $description);   
             
         if ($success) {
             $_SESSION['message'] = 'Changes Saved!'; 
@@ -93,9 +93,5 @@ if (isset($_POST['newdescription']) || isset($_POST['newgender']) || isset($_POS
             $_SESSION['animalchoice'] = $data['animal_choice'];
             $_SESSION['description'] = $data['description'];
         }
-        
-        header('Location: editController.php');
-        exit();
-        
     }
 }

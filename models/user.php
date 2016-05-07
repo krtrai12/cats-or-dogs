@@ -41,7 +41,7 @@ class User {
         $select->bindParam(':username', $username, PDO::PARAM_STR);
         $select->execute();
         
-        $result = $select->fetchAll();
+        $result = $select->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
     

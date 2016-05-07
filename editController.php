@@ -1,6 +1,6 @@
 <?php // Controller for the edit page
 
-session_start();
+require('profileInformation.php');
 
 // Show the about us page
 require('views/header.php');
