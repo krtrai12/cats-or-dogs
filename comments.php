@@ -28,9 +28,21 @@ if (!isset($db)) {
     
     //$result = $user->getComments($_POST['addComment']);
     
-    ?>
-    <script type="text/javascript">
-    window.location.href = '../index.php';
-    </script>
+    
+    if (isset($_SESSION['fromFriend'])) {
+        ?>
+        <script>
+            var name = <?php $_SESSION['fromFriend']; ?>
+        </script> <?php 
+        unset($_SESSION['fromFriend'])?>
+        <script type="text/javascript">
+        window.location.href = name;
+        </script>
     <?php
+    } else { ?>
+        <script type="text/javascript">
+        window.location.href = '../index.php';
+        </script>
+        <?php
+    }
 }

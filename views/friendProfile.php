@@ -22,31 +22,30 @@
             <section id="rest">
                 <section id="profileFeed" class="posts">
                     <?php foreach ($selection as $row): ?>
-                        <form action="friendPosts.php" method="post">
+                        <form action="../friendPosts.php" method="post">
                             <div><?php echo '<img height="300" width="300" src="data:image;base64,' . $row['image'] . ' "> '; ?>
                                 <p><?php echo $row['caption']; ?></p>
                                 <h6><?php echo "Posted by: "; echo $row['posted_by']; echo " at "; echo $row['timestamp']; ?></h6>
                             </div>
-                            <div>
-                        
-                        <?php $result = $user->getComments($row['post_id']);
-                        foreach ($result as $row): ?>
-                                <h6><?php echo $row['content']; ?></h6
-                                <h6><?php echo "Posted by: "; echo $row['comment_by']; echo " at "; echo $row['timestamp']; ?></h6>
-                        <?php endforeach; ?>
-                        
-                        <section id="postComment">
-                            <form action="comments.php" method="post">
-                                <input type="text" name="newcomment" placeholder="Comment...">
-                                <input type="hidden" name="addComment" value="<?php echo $row['post_id']; ?>">
-                                <input type="submit" value="Submit">
-                            </form>
-                        </section>
-                        
-                    </div>
                         </form>
+                        <div>
                         
+                            <?php $result = $user->getComments($row['post_id']);
+                            foreach ($result as $rowc): ?>
+                                    <h6><?php echo $rowc['content']; ?></h6
+                                    <h6><?php echo "Posted by: "; echo $rowc['comment_by']; echo " at "; echo $rowc['timestamp']; ?></h6>
+                            <?php endforeach; ?>
+                            
+                            <section id="postComment">
+                                <form action="comments.php" method="post">
+                                    <?php $_SESSION['fromFriend'] = $_GET['friendUsername']; ?>
+                                    <input type="text" name="newcomment" placeholder="Comment...">
+                                    <input type="hidden" name="addComment" value="<?php echo $row['post_id']; ?>">
+                                    <input type="submit" value="Submit">
+                                </form>
+                            </section>
                         
+                        </div>  
                     <?php endforeach; ?>  
                 </section>
                 <?php if (isset($_SESSION['message'])): ?>

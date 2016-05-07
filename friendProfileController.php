@@ -6,6 +6,7 @@ require_once('/var/www/html/models/database.php');
 $db = databaseConnection();
 
 $name = $_GET["friendUsername"];
+$_SESSION['name'] = $name;
 
 // Send a response if we can
 if (isset($db)) {
@@ -17,6 +18,7 @@ if (isset($db)) {
   $selection = $user->getUserDetails($name); 
   
   // the query should only return one row
+  
   foreach ($selection as $row) {
     $friendFirst = $row['first'];
     $friendLast = $row['last'];
@@ -25,7 +27,7 @@ if (isset($db)) {
     $friendDescription = $row['description'];
     break;
   }
-    
+  
   $selection = $user->getPosts($name); 
 }
 
