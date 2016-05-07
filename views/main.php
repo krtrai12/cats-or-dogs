@@ -13,7 +13,8 @@
                         <section id="postComment">
                             <form action="comments.php" method="post">
                                 <input type="text" name="newcomment" placeholder="Comment...">
-                                <input type="submit" name="addComment" value="<?php echo $row['post_id']; ?>">
+                                <input type="hidden" name="addComment" value="<?php echo $row['post_id']; ?>">
+                                <input type="submit" value="Submit">
                             </form>
                         </section>
                         
