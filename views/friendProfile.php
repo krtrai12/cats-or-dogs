@@ -28,11 +28,25 @@
                                 <h6><?php echo "Posted by: "; echo $row['posted_by']; echo " at "; echo $row['timestamp']; ?></h6>
                             </div>
                             <div>
-                                <input type="text" name="newcomment" placeholder="Comment">
-                                <input type="hidden" name="postid" value="<?php echo $row['post_id']; ?>">
-                                <button type="submit" name="delete" value="Delete">Delete</button>
-                            </div>
+                        
+                        <?php $result = $user->getComments($row['post_id']);
+                        foreach ($result as $row): ?>
+                                <h6><?php echo $row['content']; ?></h6
+                                <h6><?php echo "Posted by: "; echo $row['comment_by']; echo " at "; echo $row['timestamp']; ?></h6>
+                        <?php endforeach; ?>
+                        
+                        <section id="postComment">
+                            <form action="comments.php" method="post">
+                                <input type="text" name="newcomment" placeholder="Comment...">
+                                <input type="hidden" name="addComment" value="<?php echo $row['post_id']; ?>">
+                                <input type="submit" value="Submit">
+                            </form>
+                        </section>
+                        
+                    </div>
                         </form>
+                        
+                        
                     <?php endforeach; ?>  
                 </section>
                 <?php if (isset($_SESSION['message'])): ?>
