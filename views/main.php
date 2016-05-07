@@ -16,10 +16,10 @@
                             </form>
                         </section>
                         
-                        <?php foreach ($result as $row): ?>
+                        <?php $result = $user->getComments($row['post_id']);
+                        foreach ($result as $row): ?>
                                 <p><?php echo $row['content']; ?></p>
                                 <h6><?php echo "Posted by: "; echo $row['comment_by']; echo " at "; echo $row['timestamp']; ?></h6>
-                        
                         <?php endforeach; ?> 
                         
                     </div>

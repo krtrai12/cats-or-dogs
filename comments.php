@@ -26,7 +26,11 @@ if (!isset($db)) {
     //    exit();
     //}
     
-    $result = $user->getComments();
+    //$result = $user->getComments($_POST['addComment']);
     
-    header("Location: index.php" );
+    ?>
+    <script type="text/javascript">
+    window.location.href = '../index.php';
+    </script>
+    <?php
 }
