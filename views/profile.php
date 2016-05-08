@@ -36,13 +36,21 @@
                             </div>
                             <div>
                                 <form action="profileController.php" method="post">
+                                    <input type="hidden" name="postid" value="<?php echo $row['post_id']; ?>">
+                                    <button type="submit" name="delete" value="Delete">Delete</button>
+                                </form>
+                                
+                                <?php if ($row['reported'] == 0) { echo
+                                    '<form action="profileController.php" method="post">
+                                    <input type="hidden" name="postid" value="' . $row['post_id'] . '">
+                                    <input type="submit" name="report" value="Report">
+                                    </form>'; } else { echo
+                                    '<form><input type="submit" name="report" disabled="disabled" value="Reported"></form>'; } ?>
+                                
+                                <form action="profileController.php" method="post">
                                     <input type="text" name="newcomment" placeholder="Comment">
                                     <input type="hidden" name="addComment" value="<?php echo $row['post_id']; ?>">
                                     <button type="submit" name="comment" value="Comment">Add Comment</button>
-                                </form>
-                                <form action="profileController.php" method="post">
-                                    <input type="hidden" name="postid" value="<?php echo $row['post_id']; ?>">
-                                    <button type="submit" name="delete" value="Delete">Delete</button>
                                 </form>
                             </div>
                         

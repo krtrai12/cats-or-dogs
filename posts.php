@@ -37,5 +37,9 @@ if (!isset($db)) {
         $user->addComment($_SESSION['username'], $_POST['newcomment'], $_POST['addComment']);
     }
     
+    if (isset($_POST['report'])) {
+        $user->report($_POST['postid']);
+    }
+    
     $selection = $user->getPosts($_SESSION['username']);
 }
