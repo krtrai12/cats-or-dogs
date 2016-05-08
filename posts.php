@@ -31,9 +31,10 @@ if (!isset($db)) {
     
     if (isset($_POST['delete'])) {
         $user->removePost($_POST['postid']);
-        
-        header('Location: profileController.php');
-        exit();
+    }
+    
+    if (isset($_POST['comment'])) {
+        $user->addComment($_SESSION['username'], $_POST['newcomment'], $_POST['addComment']);
     }
     
     $selection = $user->getPosts($_SESSION['username']);

@@ -16,6 +16,8 @@
                                 
                         <?php endforeach; ?>
                         
+                        <?php if ($_SESSION['username'] == $row['username']) { echo ''; } ?>
+                        
                         <section id="postComment">
                             <form action="comments.php" method="post">
                                 <input type="text" name="newcomment" placeholder="Comment...">
