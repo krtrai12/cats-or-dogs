@@ -2,12 +2,14 @@
     <body>
         <div>
             <section id="top">
-                <section id="picture">
+                <aside id="picture">
                     <figure>
-                        <img id="profilePic" src="https://www.junkfreejune.org.nz/themes/base/production/images/default-profile.png" alt="Profile Picture" width="200" height="200">
+                        <?php
+                        $profilepic = $user->getProfilePicture($_GET['friendUsername']);
+                        if (isset($profilepic)) { echo '<img id="profilePic" height="200" width="200" src="data:image;base64,' . $profilepic . ' "> '; } else { 
+                        echo '<img id="profilePic" src="https://www.junkfreejune.org.nz/themes/base/production/images/default-profile.png" alt="Profile Picture" width="200" height="200">'; } ?>
                     </figure>
-                    
-                </section>
+                </aside>
             
                 <section id="info">
                     
