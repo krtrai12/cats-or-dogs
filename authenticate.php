@@ -57,6 +57,7 @@ if (isset($_POST['signinusername']) && isset($_POST['signinpassword'])) {
             $_SESSION['gender'] = $data['gender'];
             $_SESSION['animalchoice'] = $data['animal_choice'];
             $_SESSION['description'] = $data['description'];
+            $_SESSION['admin'] = $data['admin'];
             header('Location: ./');
             exit();
         } else {

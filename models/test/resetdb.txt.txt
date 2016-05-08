@@ -14,7 +14,8 @@ create table users (
     animal_choice VARCHAR(10),
     description VARCHAR(255),
     profilepic LONGBLOB,
-    profilepic_name VARCHAR(50)
+    profilepic_name VARCHAR(50),
+    admin TINYINT(1)
 );
 
 create table posts (
