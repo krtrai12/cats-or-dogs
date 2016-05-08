@@ -21,11 +21,11 @@
             
             <section id="rest">
                 <section id="profilePost">
-                    <form action="profileController.php" method="post" enctype="multipart/form-data">
+                    <form id="profilePostForm" action="profileController.php" method="post" enctype="multipart/form-data">
                         <label>Post about your pet:</label><br>
-                            <input type="file" name="image">
-                            <input type="text" name="newpost" placeholder="Description...">
-                            <input type="submit" name="add" value="Upload">
+                            <input id="file" type="file" name="image">
+                            <input id="text" type="text" name="newpost" placeholder="Description...">
+                            <input id="submit" type="submit" name="add" value="Upload">
                     </form>
                 </section>
                 <section id="profileFeed" class="posts">
