@@ -119,4 +119,10 @@ class User {
         $result = $select->fetchAll();
         return $result;
     }
+    
+    function report($post_id) {
+        $insert = $this->db->prepare('update posts set reported=1 where post_id=:id');
+        $insert->bindParam(':id', $post_id, PDO::PARAM_STR);
+        return $insert->execute();
+    }
 }

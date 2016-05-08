@@ -21,6 +21,13 @@
                                     <input type="hidden" name="postid" value="' . $row['post_id'] . '">
                                     <input type="submit" name="delete" value="Delete">
                                     </form>'; } ?>
+                                
+                        <?php if ($row['reported'] == 0) { echo
+                                    '<form action="mainController.php" method="post">
+                                    <input type="hidden" name="postid" value="' . $row['post_id'] . '">
+                                    <input type="submit" name="report" value="Report">
+                                    </form>'; } else { echo
+                                    '<form><input type="submit" name="report" disabled="disabled" value="Reported"></form>'; } ?>
                         
                         <section id="postComment">
                             <form action="comments.php" method="post">

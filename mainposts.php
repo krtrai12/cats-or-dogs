@@ -29,5 +29,9 @@ if (!isset($db)) {
         $user->removePost($_POST['postid']);
     }
     
+    if (isset($_POST['report'])) {
+        $user->report($_POST['postid']);
+    }
+    
     $selection = $user->getAllPosts();
 }
