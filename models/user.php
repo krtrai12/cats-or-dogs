@@ -82,6 +82,13 @@ class User {
         return $result;
     }
     
+    function getReportedPosts() {
+        $select = $this->db->prepare('select * from posts where reported=1 order by timestamp desc');
+        $select->execute();
+        $result = $select->fetchAll();
+        return $result;
+    }
+    
     function removePost($pictureid) {
         $delete = $this->db->prepare('delete from posts where post_id=:picid');
         $delete->bindParam(':picid', $pictureid, PDO::PARAM_INT);
