@@ -35,6 +35,14 @@
                                 <h6><?php echo "Posted by: "; echo $row['posted_by']; echo " at "; echo $row['timestamp']; ?></h6>
                             </div>
                             <div>
+                                
+                                <?php $result = $user->getComments($row['post_id']);
+                                foreach ($result as $rowc): ?>
+                                    <h6><?php echo $rowc['content']; ?></h6>
+                                    <h6><?php echo "Posted by: "; echo $rowc['comment_by']; echo " at "; echo $rowc['timestamp']; ?></h6>
+                                
+                                <?php endforeach; ?>
+                                
                                 <form action="profileController.php" method="post">
                                     <input type="hidden" name="postid" value="<?php echo $row['post_id']; ?>">
                                     <button type="submit" name="delete" value="Delete">Delete</button>

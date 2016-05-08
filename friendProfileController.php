@@ -15,20 +15,19 @@ if (isset($db)) {
   require_once('models/user.php');
   $user = new User($db);
   
-  $selection = $user->getUserDetails($name); 
+  $row = $user->getUserDetails($name); 
   
-  // the query should only return one row
+  $friendFirst = $row['first'];
+  $friendLast = $row['last'];
+  $friendGender = $row['gender'];
+  $friendAnimal = $row['animal_choice'];
+  $friendDescription = $row['description'];
   
-  foreach ($selection as $row) {
-    $friendFirst = $row['first'];
-    $friendLast = $row['last'];
-    $friendGender = $row['gender'];
-    $friendAnimal = $row['animal_choice'];
-    $friendDescription = $row['description'];
-    break;
+  $selection = $user->getPosts($name);
+  
+  if (isset($_POST['report'])) {
+    $user->report($_POST['postid']);
   }
-  
-  $selection = $user->getPosts($name); 
 }
 
 // Show the about us page
