@@ -9,6 +9,7 @@
                     </form>
                 </section>
             </section>
+            <div><a href="profileController.php"><button>Back</button></a></div>
             <?php if (isset($_SESSION['message'])): ?>
                 <div class="row">
                     <p class="text-info text-center"><?php echo $_SESSION['message']; unset($_SESSION['message']);?></p>
