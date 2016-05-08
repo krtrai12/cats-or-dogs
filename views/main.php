@@ -16,7 +16,11 @@
                                 
                         <?php endforeach; ?>
                         
-                        <?php if ($_SESSION['username'] == $row['username']) { echo ''; } ?>
+                        <?php if ($_SESSION['username'] == $row['posted_by']) { echo
+                                    '<form action="mainController.php" method="post">
+                                    <input type="hidden" name="postid" value="' . $row['post_id'] . '">
+                                    <input type="submit" name="delete" value="Delete">
+                                    </form>'; } ?>
                         
                         <section id="postComment">
                             <form action="comments.php" method="post">

@@ -24,5 +24,10 @@ if (!isset($db)) {
             $success = $user->addPost($_SESSION['username'], $_POST['newpost'], $image, $name);
         }
     }
+    
+    if (isset($_POST['delete'])) {
+        $user->removePost($_POST['postid']);
+    }
+    
     $selection = $user->getAllPosts();
 }
