@@ -20,6 +20,10 @@
                             <input type="hidden" name="postid" value="<?php echo $row['post_id'] ?>">
                             <input type="submit" name="delete" value="Remove Post">
                         </form>
+                        <form action="admin.php" method="post">
+                            <input type="hidden" name="postid" value="<?php echo $row['post_id'] ?>">
+                            <input type="submit" name="unreport" value="Keep Post">
+                        </form>
                     </div>
                 </section>
                 <?php endforeach; ?> 

@@ -7,7 +7,7 @@
                     <li <?php if ($_SERVER['REQUEST_URI'] == '/findFriends.php') echo 'class="active"'; ?>><a href="../find.php">FIND FRIENDS</a></li>
                     <?php if ($_SESSION['admin'] == 1) {    $active = '';
                                                             if ($_SERVER['REQUEST_URI'] == '/admin.php') { $active = 'class="active"'; }
-                                                            echo '<li' . $active . '><a href="../admin.php">ADMIN</a></li>'; } ?>
+                                                            echo '<li ' . $active . ' ><a href="../admin.php">ADMIN</a></li>'; } ?>
                     <li><a href="../logout.php">LOG OUT</a></li>
                 </ul>
             </nav>

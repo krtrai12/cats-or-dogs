@@ -132,4 +132,10 @@ class User {
         $insert->bindParam(':id', $post_id, PDO::PARAM_STR);
         return $insert->execute();
     }
+    
+    function unreport($post_id) {
+        $insert = $this->db->prepare('update posts set reported=0 where post_id=:id');
+        $insert->bindParam(':id', $post_id, PDO::PARAM_STR);
+        return $insert->execute();
+    }
 }
