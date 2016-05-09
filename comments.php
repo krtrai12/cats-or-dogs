@@ -23,17 +23,6 @@ if (!isset($db)) {
         }
         
     }
-    
-    /*?>
-    
-    <script>
-        var data = <?php echo $_SERVER['HTTP_REFERER']; ?>; 
-        window.location.href = ""+data;
-    </script>
-    
-    <?php*/
-    
-    //echo $_SERVER['HTTP_REFERER'];
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 
 }
