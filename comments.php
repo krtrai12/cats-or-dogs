@@ -16,33 +16,24 @@ if (!isset($db)) {
     
     // Should have form inputs
     if (isset($_POST['addComment'])) {
-        $success = $user->addComment($_SESSION['username'], $_POST['newcomment'], $_POST['addComment']);
-    }
-    
-    //if (isset($_POST['delete'])) {
-    //    $user->removePost($_POST['postid']);
+        if ($_POST['newcomment'] != "") {
+            $success = $user->addComment($_SESSION['username'], $_POST['newcomment'], $_POST['addComment']);
+        } else {
+            $_SESSION['message'] = "Please enter a comment before submitting.";
+        }
         
-    //    header('Location: profileController.php');
-    //    exit();
-    //}
-    
-    //$result = $user->getComments($_POST['addComment']);
-    
-    
-    if (isset($_SESSION['fromFriend'])) {
-        ?>
-        <script>
-            var name = <?php $_SESSION['fromFriend']; ?>
-        </script> <?php 
-        unset($_SESSION['fromFriend'])?>
-        <script type="text/javascript">
-        window.location.href = name;
-        </script>
-    <?php
-    } else { ?>
-        <script type="text/javascript">
-        window.location.href = '../index.php';
-        </script>
-        <?php
     }
+    
+    /*?>
+    
+    <script>
+        var data = <?php echo $_SERVER['HTTP_REFERER']; ?>; 
+        window.location.href = ""+data;
+    </script>
+    
+    <?php*/
+    
+    //echo $_SERVER['HTTP_REFERER'];
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+
 }
