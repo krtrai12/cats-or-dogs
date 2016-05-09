@@ -151,23 +151,25 @@ ol li:hover {
 #editPic, #editUsername {
     height: 20px;
     width: 20px;
-    position: absolute;
-}
-
-#editPic {
-    float: left;
-}
-
-#editUsername {
     float: right;
+}
+
+#edits {
+    font-size: small;
+    float: right;
+}
+
+#infoSect {
+    margin-top: 5px;
+    margin-bottom: 0px;
 }
 
 #info {
     left: 200px;
+    top: 0px;
     width: 80%;
     display: inline;
     position: static;
-    float: right;
 }
 
 #info img {
