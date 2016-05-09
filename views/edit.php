@@ -28,7 +28,7 @@
                 </div>
                 <div><button type="submit">Save Changes</button></div>   
             </form>
-                <div><a href="profileController.php"><button>Back</button></a></div>
+                <div><div id="backButton"><a href="profileController.php"><button>Back</button></a></div></div>
         </div>
         <?php if (isset($_SESSION['message'])): ?>
                 <div class="row">

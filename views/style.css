@@ -137,6 +137,7 @@ ol li:hover {
 
 #picture {
     width: 20%;
+    min-width: 200px;
     float: left;
     position: static;
 }
@@ -147,16 +148,18 @@ ol li:hover {
     position: static;
 }
 
-#editPic {
+#editPic, #editUsername {
     height: 20px;
     width: 20px;
     position: absolute;
 }
 
+#editPic {
+    float: left;
+}
+
 #editUsername {
-    height: 20px;
-    width: 20px;
-    position: absolute;
+    float: right;
 }
 
 #info {
@@ -177,7 +180,7 @@ ol li:hover {
     text-align: left;
 }
 
-/* -------------------- Profile Posts -------------------- */
+/* -------------------- Profile Post Section -------------------- */
 #rest {
     width: 100%;
     height: auto;
@@ -217,15 +220,52 @@ ol li:hover {
     margin-bottom: 100px;
 }
 
-/* -------------------- Profile Posts -------------------- */
+/* -------------------- Main page feed  -------------------- */
 #feedPost {
+    height: auto;
     background: #18a190;
     border-radius: 10px;
     margin-bottom: 30px;
 }
 
-#feedPost p {
-    float: right;
+#post {
+    padding: 2%;
+}
+
+#postPicture {
+    float: left;
+    padding-right: 5px;
+}
+
+#postReactions {
+    float: left;
+}
+
+#caption, #comments {
+    width: 100%;
+    margin-top: 0px;
+    border-bottom: solid;
+    border-bottom-color: #167692;
+    border-bottom-width: thin;
+    float: left;
+    text-align: left;
+    text-align-last: left;
+    text-overflow: ellipsis;
+}
+
+#time {
+    font-size: xx-small;
+    margin-top: 0px;
+    text-align: right;
+}
+
+/* -------------------- Edit Pages Back Button -------------------- */
+#backButton {
+    width: 40%;
+}
+
+/* -------------------- -------------------- */
+#friendsfeed {
     text-align: left;
 }
 
