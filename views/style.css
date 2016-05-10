@@ -225,6 +225,13 @@ ol li:hover {
     margin-bottom: 100px;
 }
 
+#friendProfFeed {
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-bottom: 100px;
+}
+
 /* -------------------- Main page feed  -------------------- */
 #feedPost {
     height: auto;
@@ -234,6 +241,13 @@ ol li:hover {
 }
 
 #profileFeed #feedPost {
+    background: none;
+    border-radius: 0px;
+    border-bottom: thick double;
+    border-bottom-color: #167692;
+}
+
+#friendProfFeed #feedPost {
     background: none;
     border-radius: 0px;
     border-bottom: thick double;
