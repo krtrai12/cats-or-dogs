@@ -191,7 +191,8 @@ ol li:hover {
 
 #profilePost {
     width: 20%;
-    height: 300px; 
+    height: 300px;
+    padding-right: 2%;
     float: left;
 }
 
@@ -215,8 +216,8 @@ ol li:hover {
     background: #18a190;
 }
 
-.posts {
-    width: 80%;
+#profileFeed {
+    width: 78%;
     height: auto;
     float: left;
     margin-bottom: 100px;
@@ -231,15 +232,17 @@ ol li:hover {
 }
 
 #post {
-    padding: 2%;
+    padding: 1%;
+    width: 98%;
 }
 
 #postPicture {
+    padding-right: 1%;
     float: left;
-    padding-right: 5px;
 }
 
 #postReactions {
+    height: 300px;
     float: left;
 }
 
@@ -260,6 +263,8 @@ ol li:hover {
     margin-top: 0px;
     text-align: right;
 }
+
+
 
 /* -------------------- Edit Pages Back Button -------------------- */
 #backButton {

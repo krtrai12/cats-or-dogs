@@ -28,6 +28,7 @@
                             <input type="submit" name="add" value="Upload">
                     </form>
                 </section>
+                
                 <section id="profileFeed" class="posts">
                     <?php foreach ($selection as $row): ?>
                             <div><?php echo '<img height="300" width="300" src="data:image;base64,' . $row['image'] . ' "> '; ?>
