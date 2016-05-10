@@ -90,6 +90,10 @@ class User {
     }
     
     function removePost($pictureid) {
+        $delete = $this->db->prepare('delete from comments where comment_on=:picid');
+        $delete->bindParam(':picid', $pictureid, PDO::PARAM_INT);
+        $delete->execute();
+        
         $delete = $this->db->prepare('delete from posts where post_id=:picid');
         $delete->bindParam(':picid', $pictureid, PDO::PARAM_INT);
         $delete->execute();
