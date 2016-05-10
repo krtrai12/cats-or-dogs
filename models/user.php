@@ -127,15 +127,17 @@ class User {
         return $result;
     }
     
-    function report($post_id) {
-        $insert = $this->db->prepare('update posts set reported=1 where post_id=:id');
+    function report($post_id, $date) {
+        $insert = $this->db->prepare('update posts set reported=1, timestamp=:date where post_id=:id');
         $insert->bindParam(':id', $post_id, PDO::PARAM_STR);
+        $insert->bindParam(':date', $date, PDO::PARAM_STR);
         return $insert->execute();
     }
     
-    function unreport($post_id) {
-        $insert = $this->db->prepare('update posts set reported=0 where post_id=:id');
+    function unreport($post_id, $date) {
+        $insert = $this->db->prepare('update posts set reported=0, timestamp=:date where post_id=:id');
         $insert->bindParam(':id', $post_id, PDO::PARAM_STR);
+        $insert->bindParam(':date', $date, PDO::PARAM_STR);
         return $insert->execute();
     }
 }

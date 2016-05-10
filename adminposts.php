@@ -17,7 +17,7 @@ if (!isset($db)) {
     }
     
     if (isset($_POST['unreport'])) {
-        $user->unreport($_POST['postid']);
+        $user->unreport($_POST['postid'], $_POST['dateposted']);
     }
     
     $selection = $user->getReportedPosts();

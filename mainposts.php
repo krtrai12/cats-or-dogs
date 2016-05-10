@@ -30,7 +30,7 @@ if (!isset($db)) {
     }
     
     if (isset($_POST['report'])) {
-        $user->report($_POST['postid']);
+        $user->report($_POST['postid'], $_POST['dateposted']);
     }
     
     $selection = $user->getAllPosts();

@@ -22,6 +22,7 @@
                         </form>
                         <form action="admin.php" method="post">
                             <input type="hidden" name="postid" value="<?php echo $row['post_id'] ?>">
+                            <input type="hidden" name="dateposted" value="<?php echo $row['timestamp'] ?>">
                             <input type="submit" name="unreport" value="Keep Post">
                         </form>
                     </div>

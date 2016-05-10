@@ -28,6 +28,7 @@
                         <?php if ($row['reported'] == 0) { echo
                                     '<form action="mainController.php" method="post">
                                     <input type="hidden" name="postid" value="' . $row['post_id'] . '">
+                                    <input type="hidden" name="dateposted" value="' . $row['timestamp'] . '">
                                     <input type="submit" name="report" value="Report">
                                     </form>'; } else { echo
                                     '<form><input type="submit" name="report" disabled="disabled" value="Reported"></form>'; } ?>

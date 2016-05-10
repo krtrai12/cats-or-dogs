@@ -34,15 +34,11 @@ if (!isset($db)) {
     }
     
     if (isset($_POST['comment'])) {
-        if ($_POST['newcomment'] != "") {
-            $success = $user->addComment($_SESSION['username'], $_POST['newcomment'], $_POST['addComment']);
-        } else {
-            $_SESSION['message'] = "Please enter a comment before submitting.";
-        }
+        $user->addComment($_SESSION['username'], $_POST['newcomment'], $_POST['addComment']);
     }
     
     if (isset($_POST['report'])) {
-        $user->report($_POST['postid']);
+        $user->report($_POST['postid'], $_POST['dateposted']);
     }
     
     $selection = $user->getPosts($_SESSION['username']);
