@@ -1,8 +1,8 @@
-<?php // Controller for the home page
+<?php // Controller for the profile page
 
 require('posts.php');
 
-// Show the about us page
+// The user can only get here if logged in
 require('views/header.php');
 require('views/profile.php');
 require('views/footersignedin.php');

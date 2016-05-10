@@ -14,8 +14,9 @@ if (!isset($db)) {
     require_once('models/user.php');
     $user = new User($db);
     
-    // Should have form inputs
+    // Here, we check if the user clicked the 'addComment' button
     if (isset($_POST['addComment'])) {
+        // before we send the comment to the database, we must check to see if the comment is more than just an empty string
         if ($_POST['newcomment'] != "") {
             $success = $user->addComment($_SESSION['username'], $_POST['newcomment'], $_POST['addComment']);
         } else {
@@ -23,6 +24,8 @@ if (!isset($db)) {
         }
         
     }
+    
+    // after the comment is added, we return to the page which "referred" us to the comments.php
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 
 }
