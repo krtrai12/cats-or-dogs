@@ -46,25 +46,28 @@
                                         <p id= "comments"><?php echo ' @'; echo $rowc['comment_by']; echo ': '; echo $rowc['content']; ?></p><p id="time"><?php echo $rowc['timestamp']; ?></p>       
                                     <?php endforeach; ?>
                                 </section>
-                            
-                                <form action="profileController.php" method="post">
-                                    <input type="hidden" name="postid" value="<?php echo $row['post_id']; ?>">
-                                    <button type="submit" name="delete" value="Delete">Delete</button>
-                                </form>
-                            
-                                <?php if ($row['reported'] == 0) { echo
-                                    '<form action="profileController.php" method="post">
-                                    <input type="hidden" name="postid" value="' . $row['post_id'] . '">
-                                    <input type="hidden" name="dateposted" value="' . $row['timestamp'] . '">
-                                    <input type="submit" name="report" value="Report">
-                                    </form>'; } else { echo
-                                    '<form><input type="submit" name="report" disabled="disabled" value="Reported"></form>'; } ?>
                                 
-                                <form action="profileController.php" method="post">
-                                    <input type="text" name="newcomment" placeholder="Comment">
-                                    <input type="hidden" name="addComment" value="<?php echo $row['post_id']; ?>">
-                                    <button type="submit" name="comment" value="Comment">Add Comment</button>
-                                </form>
+                                <section id="postComment">
+                                    <form action="profileController.php" method="post">
+                                        <input type="text" name="newcomment" placeholder="Comment">
+                                        <input type="hidden" name="addComment" value="<?php echo $row['post_id']; ?>">
+                                        <input type="submit" name="comment" value="Comment"></input>
+                                    </form>
+                                    
+                                    <form action="profileController.php" method="post">
+                                        <input type="hidden" name="postid" value="<?php echo $row['post_id']; ?>">
+                                        <input type="submit" name="delete" value="Delete"></input>
+                                    </form>
+                                
+                                    <?php if ($row['reported'] == 0) { echo
+                                        '<form action="profileController.php" method="post">
+                                        <input type="hidden" name="postid" value="' . $row['post_id'] . '">
+                                        <input type="hidden" name="dateposted" value="' . $row['timestamp'] . '">
+                                        <input type="submit" name="report" value="Report">
+                                        </form>'; } else { echo
+                                        '<form><input type="submit" name="report" disabled="disabled" value="Reported"></form>'; } ?>
+       
+                                </section>  
                             </div>
                         </section>
                     <?php endforeach; ?>  

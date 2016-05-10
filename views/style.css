@@ -242,7 +242,8 @@ ol li:hover {
 }
 
 #postReactions {
-    height: 300px;
+    max-height: 300px;
+    overflow: scroll;
     float: left;
 }
 
