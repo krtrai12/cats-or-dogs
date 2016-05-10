@@ -14,7 +14,7 @@ if (!isset($db)) {
     require_once('models/user.php');
     $user = new User($db);
     
-    ///////////// DO WE NEED THIS?????
+    // Gets the users profile picture to display
     $profpic = $user->getProfilePicture($_SESSION['username']);
     
     // If the user tries to add a new post, we need to get all of the information from the form and insert them into the database

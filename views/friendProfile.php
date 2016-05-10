@@ -12,10 +12,10 @@
                 </aside>
             
                 <section id="info">
-                    <p id="infoSect"><?php echo 'Name: '; echo $friendFirst; echo ' '; echo $friendLast; echo ' (@'; echo $_GET['friendUsername'];  echo ')'; ?></p>
+                    <p id="infoSect"><?php echo 'Name: '; echo htmlentities($friendFirst, ENT_QUOTES, 'utf-8'); echo ' '; echo htmlentities($friendLast, ENT_QUOTES, 'utf-8'); echo ' (@'; echo htmlentities($_GET['friendUsername'], ENT_QUOTES, 'utf-8');  echo ')'; ?></p>
                     <p id="infoSect"><?php echo 'Gender: '; echo $friendGender; ?></p>
                     <p id="infoSect"><?php if (isset($friendAnimal)) { echo 'Animal Choice: '; echo $friendAnimal; } else { echo '<i>Animal choice</i>'; } ?></p>
-                    <p id="infoSect"><?php if (isset($friendDescription)) { echo 'Description: '; echo $friendDescription; } else { echo '<i>Your Description</i>'; } ?></p>
+                    <p id="infoSect"><?php if (isset($friendDescription)) { echo 'Description: '; echo htmlentities($friendDescription, ENT_QUOTES, 'utf-8'); } else { echo '<i>Your Description</i>'; } ?></p>
                 </section>
             </section>
             
@@ -32,12 +32,14 @@
                                 
                                 
                                 <section id="postReactions">
-                                    <p id= "caption"><?php echo ' @'; echo $row['posted_by']; echo ': '; echo $row['caption']; ?></p><p id="time"><?php echo $row['timestamp']; ?></p>
+                                    <p id= "caption"><?php echo ' @'; echo htmlentities($row['posted_by'], ENT_QUOTES, 'utf-8'); echo ': '; echo htmlentities($row['caption'], ENT_QUOTES, 'utf-8'); ?></p>
+                                    <p id="time"><?php echo $row['timestamp']; ?></p>
             
                                     <?php $result = $user->getComments($row['post_id']);
                                     
                                     foreach ($result as $rowc): ?>
-                                        <p id= "comments"><?php echo ' @'; echo $rowc['comment_by']; echo ': '; echo $rowc['content']; ?></p><p id="time"><?php echo $rowc['timestamp']; ?></p>       
+                                        <p id= "comments"><?php echo ' @'; echo htmlentities($rowc['comment_by'], ENT_QUOTES, 'utf-8'); echo ': '; echo htmlentities($rowc['content'], ENT_QUOTES, 'utf-8'); ?></p>
+                                        <p id="time"><?php echo $rowc['timestamp']; ?></p>       
                                     <?php endforeach; ?>
                                 </section>
                                 

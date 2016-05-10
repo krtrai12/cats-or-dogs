@@ -12,10 +12,11 @@
                 <section id="info">
                     <a href="editController.php"><img id="editUsername" src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a><label id="edits">Edit Personal Information:</label>
                     <a href="profpicController.php"><img id="editPic" src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a><label id="edits">Edit Picture:</label>
-                    <p id="infoSect"><?php echo 'Name: '; echo $_SESSION['first']; echo ' '; echo $_SESSION['last']; echo ' (@'; echo $_SESSION['username']; echo ')'; ?></p>
+                    <p id="infoSect"><?php echo 'Name: '; echo htmlentities($_SESSION['first'], ENT_QUOTES, 'utf-8'); echo ' ';
+                                        echo htmlentities($_SESSION['last'], ENT_QUOTES, 'utf-8'); echo ' (@'; echo htmlentities($_SESSION['username'], ENT_QUOTES, 'utf-8'); echo ')'; ?></p>
                     <p id="infoSect"><?php echo 'Gender: '; echo $_SESSION['gender']; ?></p>
                     <p id="infoSect"><?php if (isset($_SESSION['animalchoice'])) { echo 'Animal Choice: '; echo $_SESSION['animalchoice']; } else { echo '<i>Animal choice</i>'; } ?></p>
-                    <p id="infoSect"><?php if (isset($_SESSION['description'])) { echo 'Description: '; echo $_SESSION['description']; } else { echo '<i>Your Description</i>'; } ?></p>
+                    <p id="infoSect"><?php if (isset($_SESSION['description'])) { echo 'Description: '; echo htmlentities($_SESSION['description'], ENT_QUOTES, 'utf-8'); } else { echo '<i>Your Description</i>'; } ?></p>
                 </section>
             </section>
             
@@ -38,12 +39,14 @@
                                 </section>
                                 
                                 <section id="postReactions">
-                                    <p id= "caption"><?php echo ' @'; echo $row['posted_by']; echo ': '; echo $row['caption']; ?></p><p id="time"><?php echo $row['timestamp']; ?></p>
+                                    <p id= "caption"><?php echo ' @'; echo htmlentities($row['posted_by'], ENT_QUOTES, 'utf-8'); echo ': '; echo htmlentities($row['caption'], ENT_QUOTES, 'utf-8'); ?></p>
+                                    <p id="time"><?php echo $row['timestamp']; ?></p>
             
                                     <?php $result = $user->getComments($row['post_id']);
                                     
                                     foreach ($result as $rowc): ?>
-                                        <p id= "comments"><?php echo ' @'; echo $rowc['comment_by']; echo ': '; echo $rowc['content']; ?></p><p id="time"><?php echo $rowc['timestamp']; ?></p>       
+                                        <p id= "comments"><?php echo ' @'; echo htmlentities($rowc['comment_by'], ENT_QUOTES, 'utf-8'); echo ': '; echo htmlentities($rowc['content'], ENT_QUOTES, 'utf-8'); ?></p>
+                                        <p id="time"><?php echo $rowc['timestamp']; ?></p>       
                                     <?php endforeach; ?>
                                 </section>
                                 
