@@ -3,7 +3,7 @@
             <h1>CATS? or DOGS?</h1>
         </header>
         
-        <div>
+        <div id="helloWorld">
             <a href="../signupController.php"><section id="catButton">
                 <!--<img class="slides" src="http://www.partnershipforpets.org/images/bigstock_Kitten_on_a_white_background_27948998-new%20copy.png">-->
                 <img class="catSlides" src="views/Images/CatImages/orangeCatOnBack.jpg">
