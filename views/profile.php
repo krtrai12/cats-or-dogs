@@ -6,49 +6,52 @@
                     <figure>
                         <?php if (isset($profpic)) { echo '<img id="profilePic" height="200" width="200" src="data:image;base64,' . $profpic . ' "> '; } else { 
                         echo '<img id="profilePic" src="https://www.junkfreejune.org.nz/themes/base/production/images/default-profile.png" alt="Profile Picture" width="200" height="200">'; } ?>
-                        <a href="profpicController.php"><img id="editPic" src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a>
                     </figure>
                 </aside>
             
                 <section id="info">
-                    <a href="editController.php"><img id="editUsername" src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a>
-                    <p><?php echo 'Name: '; echo $_SESSION['first']; echo ' '; echo $_SESSION['last']; echo ' (@'; echo $_SESSION['username']; echo ')'; ?></p>
-                    <p><?php echo 'Gender: '; echo $_SESSION['gender']; ?></p>
-                    <p><?php if (isset($_SESSION['animalchoice'])) { echo 'Animal Choice: '; echo $_SESSION['animalchoice']; } else { echo '<i>Animal choice</i>'; } ?></p>
-                    <p><?php if (isset($_SESSION['description'])) { echo 'Description: '; echo $_SESSION['description']; } else { echo '<i>Your Description</i>'; } ?></p>
+                    <a href="editController.php"><img id="editUsername" src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a><label id="edits">Edit Personal Information:</label>
+                    <a href="profpicController.php"><img id="editPic" src="views/Images/edit_icon.png" width="20" height="20" alt="Edit"></a><label id="edits">Edit Picture:</label>
+                    <p id="infoSect"><?php echo 'Name: '; echo $_SESSION['first']; echo ' '; echo $_SESSION['last']; echo ' (@'; echo $_SESSION['username']; echo ')'; ?></p>
+                    <p id="infoSect"><?php echo 'Gender: '; echo $_SESSION['gender']; ?></p>
+                    <p id="infoSect"><?php if (isset($_SESSION['animalchoice'])) { echo 'Animal Choice: '; echo $_SESSION['animalchoice']; } else { echo '<i>Animal choice</i>'; } ?></p>
+                    <p id="infoSect"><?php if (isset($_SESSION['description'])) { echo 'Description: '; echo $_SESSION['description']; } else { echo '<i>Your Description</i>'; } ?></p>
                 </section>
             </section>
             
             <section id="rest">
                 <section id="profilePost">
-                    <form action="profileController.php" method="post" enctype="multipart/form-data">
+                    <form id="profilePostForm" action="profileController.php" method="post" enctype="multipart/form-data">
                         <label>Post about your pet:</label><br>
-                            <input type="file" name="image">
-                            <input type="text" name="newpost" placeholder="Description...">
-                            <input type="submit" name="add" value="Upload">
+                            <input id="file" type="file" name="image">
+                            <input id="text" type="text" name="newpost" placeholder="Description...">
+                            <input id="submit" type="submit" name="add" value="Upload">
                     </form>
                 </section>
                 
                 <section id="profileFeed" class="posts">
                     <?php foreach ($selection as $row): ?>
-                            <div><?php echo '<img height="300" width="300" src="data:image;base64,' . $row['image'] . ' "> '; ?>
-                                <p><?php echo $row['caption']; ?></p>
-                                <h6><?php echo "Posted by: "; echo $row['posted_by']; echo " at "; echo $row['timestamp']; ?></h6>
-                            </div>
-                            <div>
+                        <section id="feedPost">
+                            <div id="post">
+                                <section id="postPicture">
+                                    <?php echo '<img height="300" width="300" src="data:image;base64,' . $row['image'] . ' "> '; ?>
+                                </section>
                                 
-                                <?php $result = $user->getComments($row['post_id']);
-                                foreach ($result as $rowc): ?>
-                                    <h6><?php echo $rowc['content']; ?></h6>
-                                    <h6><?php echo "Posted by: "; echo $rowc['comment_by']; echo " at "; echo $rowc['timestamp']; ?></h6>
-                                
-                                <?php endforeach; ?>
-                                
+                                <section id="postReactions">
+                                    <p id= "caption"><?php echo ' @'; echo $row['posted_by']; echo ': '; echo $row['caption']; ?></p><p id="time"><?php echo $row['timestamp']; ?></p>
+            
+                                    <?php $result = $user->getComments($row['post_id']);
+                                    
+                                    foreach ($result as $rowc): ?>
+                                        <p id= "comments"><?php echo ' @'; echo $rowc['comment_by']; echo ': '; echo $rowc['content']; ?></p><p id="time"><?php echo $rowc['timestamp']; ?></p>       
+                                    <?php endforeach; ?>
+                                </section>
+                            
                                 <form action="profileController.php" method="post">
                                     <input type="hidden" name="postid" value="<?php echo $row['post_id']; ?>">
                                     <button type="submit" name="delete" value="Delete">Delete</button>
                                 </form>
-                                
+                            
                                 <?php if ($row['reported'] == 0) { echo
                                     '<form action="profileController.php" method="post">
                                     <input type="hidden" name="postid" value="' . $row['post_id'] . '">
@@ -63,7 +66,7 @@
                                     <button type="submit" name="comment" value="Comment">Add Comment</button>
                                 </form>
                             </div>
-                        
+                        </section>
                     <?php endforeach; ?>  
                 </section>
             </section>

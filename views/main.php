@@ -13,10 +13,9 @@
                             <p id= "caption"><?php echo ' @'; echo $row['posted_by']; echo ': '; echo $row['caption']; ?></p><p id="time"><?php echo $row['timestamp']; ?></p>
     
                             <?php $result = $user->getComments($row['post_id']);
+                            
                             foreach ($result as $rowc): ?>
-                                    <p id= "comments"><?php echo ' @'; echo $rowc['comment_by']; echo ': '; echo $rowc['content']; ?></p><p id="time"><?php echo $rowc['timestamp']; ?></p>
-                                    
-                                    
+                                <p id= "comments"><?php echo ' @'; echo $rowc['comment_by']; echo ': '; echo $rowc['content']; ?></p><p id="time"><?php echo $rowc['timestamp']; ?></p>       
                             <?php endforeach; ?>
                         </section>
                         <?php if ($_SESSION['username'] == $row['posted_by']) { echo
@@ -31,10 +30,7 @@
                                     <input type="hidden" name="dateposted" value="' . $row['timestamp'] . '">
                                     <input type="submit" name="report" value="Report">
                                     </form>'; } else { echo
-                                    '<form><input type="submit" name="report" disabled="disabled" value="Reported"></form>'; } ?>
-                        
-                        
-                        
+                                    '<form><input type="submit" name="report" disabled="disabled" value="Reported"></form>'; } ?>   
                     </div>
                     
                     <section id="postComment">
