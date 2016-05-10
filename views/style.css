@@ -131,6 +131,7 @@ ol li:hover {
 /* -------------------- Profile: top section -------------------- */
 #top {
     width: 100%;
+    min-width: 800px;
     height: 200px;
     margin-bottom: 5px;
     background: #167692;
@@ -187,6 +188,7 @@ ol li:hover {
 /* -------------------- Profile Post Section -------------------- */
 #rest {
     width: 100%;
+    min-width: 800px;
     height: auto;
     float: left;
 }
@@ -235,23 +237,9 @@ ol li:hover {
 /* -------------------- Main page feed  -------------------- */
 #feedPost {
     height: auto;
-    background: #18a190;
-    border-radius: 10px;
+    border-bottom: thick double;
+    border-bottom-color: #167692;
     margin-bottom: 30px;
-}
-
-#profileFeed #feedPost {
-    background: none;
-    border-radius: 0px;
-    border-bottom: thick double;
-    border-bottom-color: #167692;
-}
-
-#friendProfFeed #feedPost {
-    background: none;
-    border-radius: 0px;
-    border-bottom: thick double;
-    border-bottom-color: #167692;
 }
 
 #post {
@@ -266,8 +254,13 @@ ol li:hover {
 
 #postReactions {
     max-height: 300px;
+    max-width: 800px;
     overflow: scroll;
     float: left;
+}
+
+#profileFeed #postReactions {
+    max-width: 550px;
 }
 
 #caption, #comments {
