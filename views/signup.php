@@ -1,4 +1,5 @@
 <div class="col-sm-6">
+                    <!-- A page to sign up for the website -->
                     <h1>Register</h1>
                     <form action="../authenticate.php" method="post" class="well">
                         <div class="form-group">
@@ -14,7 +15,7 @@
                                         <input type="text" name="last" class="form-control">
                         </div>
                         <div class="form-group">
-                                        <label>Gender</label>
+                                        <label>Gender (m/f)</label>
                                         <input type="text" name="gender" class="form-control">
                         </div>
                         <div class="form-group">

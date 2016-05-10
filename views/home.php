@@ -1,18 +1,18 @@
     <body>
+        <!-- The home page for the website -->
         <header>
             <h1>CATS? or DOGS?</h1>
         </header>
         
+        <!-- Slideshow of cats and dogs (and catdog) -->
         <div id="helloWorld">
             <a href="../signupController.php"><section id="catButton">
-                <!--<img class="slides" src="http://www.partnershipforpets.org/images/bigstock_Kitten_on_a_white_background_27948998-new%20copy.png">-->
                 <img class="catSlides" src="views/Images/CatImages/orangeCatOnBack.jpg">
                 <img class="catSlides" src="views/Images/CatImages/moreKittens.jpg">
                 <img class="catSlides" src="views/Images/CatImages/whatsThatCat.jpg">
             </section></a>
             
             <a href="../signupController.php"><section id="bothButton">
-                <!--<img class="slides" src="http://i0.wp.com/www.forkauaionline.com/wp-content/uploads/2016/02/Cute-puppy-kissing-kitten-for-Animal-Chat-clear-background.png?fit=1280%2C862">-->
                 <img class="bothSlides" src="views/Images/DogImages/wrinklyPuppy.jpg">
                 <img class="bothSlides" src="views/Images/CatImages/greyCat.jpg">
                 <img class="bothSlides" src="views/Images/CatImages/catdog2.jpg">
@@ -28,7 +28,6 @@
             </section></a>
             
             <a href="../signupController.php"><section id="dogButton">
-                <!--<img class="slides" src="http://www.hd-wallpapersdownload.com/upload/bulk-upload/images-for-puppy.jpg">-->
                 <img class="dogSlides" src="views/Images/DogImages/pickMePupp.jpg">
                 <img class="dogSlides" src="views/Images/DogImages/radBeatsDawg.jpg">
                 <img class="dogSlides" src="views/Images/DogImages/wetHound.jpg">

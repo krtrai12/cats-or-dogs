@@ -1,5 +1,6 @@
     
     <body>
+        <!-- A page for your won profile.  Allows you to edit personal information and create posts. -->
         <div>
             <section id="top">
                 <aside id="picture">

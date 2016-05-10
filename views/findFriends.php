@@ -1,4 +1,5 @@
     <body>
+        <!-- A page to find people who are on this website -->
         <?php require_once('/var/www/html/searchdb.php')?>
         <header>
             <h1>FIND FRIENDS</h1>

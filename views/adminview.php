@@ -1,7 +1,9 @@
     <div>
         <body>
+            <!-- An admin view to see all of the reported posts. -->
             <h1>Reported Posts</h1>
             <section id="friendsfeed">
+                <!-- Display all of the reported posts -->
                 <?php foreach ($selection as $row): ?>
                 <section id="feedPost">
                     <div><?php echo '<img height="300" width="300" src="data:image;base64,' . $row['image'] . ' "> '; ?>
@@ -16,6 +18,7 @@
                                 
                         <?php endforeach; ?>
                         
+                        <!-- Give the option to either keep the post or delete it from the database -->
                         <form action="admin.php" method="post">
                             <input type="hidden" name="postid" value="<?php echo $row['post_id']; ?>">
                             <input type="submit" name="delete" value="Remove Post">

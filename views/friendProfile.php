@@ -1,5 +1,6 @@
     
     <body>
+        <!-- A page to view another persons profile. -->
         <div>
             <section id="top">
                 <aside id="picture">

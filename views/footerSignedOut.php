@@ -1,4 +1,5 @@
         <footer id="footerMenuSignedOut">
+            <!-- A footer for the website when you are signed out -->
             <nav>
                 <ul>
                     <li <?php if ($_SERVER['REQUEST_URI'] == '/index.php') echo 'class="active"'; ?>><a href="../index.php">HOME</a></li>

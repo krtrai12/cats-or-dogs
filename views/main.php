@@ -1,5 +1,6 @@
     <div>
         <body>
+            <!-- The main page for the website when you are signed in.  View all of the posts on the website -->
             <h1>Welcome, <?php echo $_SESSION['username']?>!</h1>
             
             <section id="friendsfeed">

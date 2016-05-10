@@ -1,4 +1,5 @@
     <body>
+        <!-- A page to edit your profile information -->
             <h1>Edit Profile</h1>
             <form action="editController.php" method="post">
                 <div class="form-group">

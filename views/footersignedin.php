@@ -1,4 +1,5 @@
         <footer id="footerMenuSignedIn">
+            <!-- A footer for the website when you are signed in -->
             <nav>
                 <ul>
                     <li <?php if ($_SERVER['REQUEST_URI'] == '/mainController.php') echo 'class="active"'; ?>><a href="../mainController.php">HOME</a></li>

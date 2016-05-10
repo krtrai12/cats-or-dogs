@@ -1,4 +1,5 @@
     <body>
+        <!-- An About Us Page -->
         <header>
             <h1>ABOUT US</h1>
         </header>

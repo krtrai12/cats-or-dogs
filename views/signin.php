@@ -1,4 +1,5 @@
 <div class="row">
+                <!-- A page to input your credentials and sign in. -->
                 <div class="col-sm-6">
                     <h1>Login</h1>
                     <form action="../authenticate.php" method="post" class="well">
