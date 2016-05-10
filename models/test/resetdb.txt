@@ -49,3 +49,13 @@ alter table users add FOREIGN KEY(animal_choice) references animals(animal);
 insert into animals(animal) values ("cat");
 insert into animals(animal) values ("dog");
 insert into animals(animal) values ("both");
+
+insert into users(username,gender,first,last,password,animal_choice,description,profilepic,profilepic_name,admin)
+    values ("Alec","m","Alec","MacCrory","$2y$10$A79y4l97zf1KvS/Zx7WWYesMSOYrLGfgvJ8r2GeZAVka3pKKjvkjW",NULL,NULL,NULL,NULL,1);
+    
+insert into users(username,gender,first,last,password,animal_choice,description,profilepic,profilepic_name,admin)
+    values ("Kayla","f","Kayla","Trainer","$2y$10$7LE4zssSYESFoQNrFrOlzujl87ZLa77hDFkGuqA9YKI9EWdX/oMYu",NULL,NULL,NULL,NULL,NULL);
+    
+insert into users(username,gender,first,last,password,animal_choice,description,profilepic,profilepic_name,admin)
+    values ("Andy","m","Andrew","Jarombek","$2y$10$U8ZbTcXExZFx5ni3hEZ5FO/h16eKugAkHMnuyXMWHOFAR1QQbFByS",NULL,NULL,NULL,NULL,NULL);
+    
